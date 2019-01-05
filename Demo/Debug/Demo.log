@@ -1,16 +1,5 @@
-﻿  ebentoak.c
-  graphics.c
-  imagen.c
-  soinua.c
-  text.c
-  enemigo.c
-  jokalaria.c
+﻿  jokalaria.c
 c:\users\iker\desktop\prueba\demo\jokalaria.c(19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
 c:\users\iker\desktop\prueba\demo\jokalaria.c(23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\iker\desktop\prueba\demo\jokalaria.c(101): warning C4029: la lista de parámetros formales declarada es distinta de la definición
-  jokua.c
-c:\users\iker\desktop\prueba\demo\jokua.c(185): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
-  main.c
-  plataformak.c
-  Generando código...
+c:\users\iker\desktop\prueba\demo\jokalaria.c(105): warning C4029: la lista de parámetros formales declarada es distinta de la definición
   Demo.vcxproj -> C:\Users\Iker\Desktop\prueba\Debug\Demo.exe

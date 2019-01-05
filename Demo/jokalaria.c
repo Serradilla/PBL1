@@ -15,23 +15,27 @@
 
 ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
 
-	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + 158)) {
-		jokalaria.lurra = plataforma1.posizioa.y;
+	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + 300)) {
+		jokalaria.lurra = plataforma1.posizioa.y - 50;
 		printf("en la plataforma1 ");
 	}
-	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + 158)) {
-		jokalaria.lurra = plataforma2.posizioa.y;
+	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + 300)) {
+		jokalaria.lurra = plataforma2.posizioa.y - 50;
 		printf("en la plataforma2 ");
 	}
 	else {
 		jokalaria.lurra = 400;
-		if ((jokalaria.posizioa.y < jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
-			jokalaria.dy = 4;
-		}
-		else if((jokalaria.posizioa.y == 400)&&(jokalaria.saltatzen == 0)) {
-			jokalaria.dy = 0;
-		}
 	}
+	if ((jokalaria.posizioa.y < jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
+		jokalaria.dy = 4;
+	}
+	else if ((jokalaria.posizioa.y == jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
+		jokalaria.dy = 0;
+	}
+	else if ((jokalaria.posizioa.y == 400) && (jokalaria.saltatzen == 0)) {
+		jokalaria.dy = 0;
+	}
+
 
 	switch (ebentuaJasoGertatuBada()) {
 
