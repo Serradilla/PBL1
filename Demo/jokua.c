@@ -62,13 +62,13 @@ void jolastu(void) {
 
 	plataforma1.Id = plataformaSortu();
 	plataforma1.posizioa.x = 100;
-	plataforma1.posizioa.y = 300;
+	plataforma1.posizioa.y = 350;
 	plataforma1.dx = 0;
 	plataforma1.dy = 0;
 
 	plataforma2.Id = plataformaSortu();
 	plataforma2.posizioa.x = 500;
-	plataforma2.posizioa.y = 300;
+	plataforma2.posizioa.y = 350;
 	plataforma2.dx = 0;
 	plataforma2.dy = 0;
 
@@ -96,10 +96,10 @@ void jolastu(void) {
 	egoera = JOLASTEN;
 	do{
 
-		jokalaria = jokalariaFuntzioak(jokalaria,eszenarioa);
+		jokalaria = jokalariaFuntzioak(jokalaria,eszenarioa,plataforma1,plataforma2);
 		eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
-		plataforma1 = plataformaFuntzioak(plataforma1, eszenarioa);
-		plataforma2 = plataformaFuntzioak(plataforma2, eszenarioa);
+		plataforma1 = plataformaFuntzioak(plataforma1, eszenarioa,jokalaria);
+		plataforma2 = plataformaFuntzioak(plataforma2, eszenarioa,jokalaria);
 		enemigo.posizioa = enemyMovement(jokalaria.posizioa, enemigo.posizioa);
 		enemigo1.posizioa = enemyMovement(jokalaria.posizioa, enemigo1.posizioa);
 
