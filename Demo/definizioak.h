@@ -1,8 +1,10 @@
 #ifndef DEFINIZIOAK_H_
 #define DEFINIZIOAK_H_
 
-typedef enum {JOLASTEN,GALDU}EGOERA;
-typedef enum {MENU, INSTRUKZIOAK, PANTAILA1, PANTAILA2}PANTAILA;
+#include "ebentoak.h"
+
+typedef enum { JOLASTEN, GALDU }EGOERA;
+typedef enum { MENU, INSTRUKZIOAK, PANTAILA1, PANTAILA2 }PANTAILA;
 
 
 typedef struct S_ELEMENTUA {

@@ -69,9 +69,9 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 		break;
 
-	case TECLA_UP:
+	case TECLA_SPACE:
 
-		jokalaria.saltatzen = 1;
+ 		jokalaria.saltatzen = 1;
 
 		break;
 
@@ -102,7 +102,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 }
 
-ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa,ELEMENTUA plataforma) {
+ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 	switch (jokalaria.ebentua) {
 
@@ -131,8 +131,8 @@ ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa,ELEMENTU
 
 	default:
 
-			eszenarioa.dx = 0;
-		
+		eszenarioa.dx = 0;
+
 		break;
 	}
 

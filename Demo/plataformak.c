@@ -14,7 +14,7 @@
 #include "jokalaria.h"
 #include "plataformak.h"
 
-ELEMENTUA plataformaFuntzioak(ELEMENTUA plataforma, ELEMENTUA eszenarioa,ELEMENTUA jokalaria) {
+ELEMENTUA plataformaFuntzioak(ELEMENTUA plataforma, ELEMENTUA eszenarioa) {
 
 	if (eszenarioa.dx == -6) {
 		plataforma.dx = -6;
