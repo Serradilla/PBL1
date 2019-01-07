@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{FE2D548E-4A3D-42BD-954B-B71B78C10AB9}</ProjectGuid>
     <RootNamespace>Demo</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2ttf\include;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2mixer\include;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2image\include;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Visual Studio\Program\PBL\PBL1\simpleSdlWrapper;D:\Visual Studio\Program\PBL\PBL1\sdl2ttf\include;D:\Visual Studio\Program\PBL\PBL1\sdl2mixer\include;D:\Visual Studio\Program\PBL\PBL1\sdl2image\include;D:\Visual Studio\Program\PBL\PBL1\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2image\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2ttf\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2mixer\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -90,7 +90,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2ttf\include;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2mixer\include;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2image\include;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Visual Studio\Program\PBL\PBL1\simpleSdlWrapper;D:\Visual Studio\Program\PBL\PBL1\sdl2ttf\include;D:\Visual Studio\Program\PBL\PBL1\sdl2mixer\include;D:\Visual Studio\Program\PBL\PBL1\sdl2image\include;D:\Visual Studio\Program\PBL\PBL1\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2image\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2ttf\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2mixer\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

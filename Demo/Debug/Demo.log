@@ -5,11 +5,11 @@
   text.c
   enemigo.c
   jokalaria.c
-c:\users\iker\desktop\prueba\demo\jokalaria.c(19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-c:\users\iker\desktop\prueba\demo\jokalaria.c(23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\visual studio\program\pbl\pbl1\demo\jokalaria.c(19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+d:\visual studio\program\pbl\pbl1\demo\jokalaria.c(23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   jokua.c
-c:\users\iker\desktop\prueba\demo\jokua.c(255): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
+d:\visual studio\program\pbl\pbl1\demo\jokua.c(255): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
   main.c
   plataformak.c
   Generando código...
-  Demo.vcxproj -> C:\Users\Iker\Desktop\prueba\Debug\Demo.exe
+  Demo.vcxproj -> D:\Visual Studio\Program\PBL\PBL1\Debug\Demo.exe
