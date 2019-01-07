@@ -11,12 +11,14 @@ typedef struct S_ELEMENTUA {
 
 	POSIZIOA posizioa;
 	int Id;
-	int dx;
-	int dy;
-	int saltatzen;
-	int kont;
-	int ebentua;
-	int lurra;
+	int dx; // elementuen mugimendua x ardatzarekiko
+	int dy; // elementuen mugimendua y ardatzarekiko
+	int saltatzen; //jokalariaren saltoa egitego
+	int kont; // jokalariaren mugimendua egiteko
+	int kont2; //jokalariaren animaziorako
+	int egoera; //jokalariaren egoera animazioa egiteko
+	int ebentua; //eszenarioa mugitzeko
+	int lurra; // jokalariaren lurra
 
 }ELEMENTUA;
 

@@ -13,15 +13,19 @@
 #include "definizioak.h"
 #include "jokalaria.h"
 
+#define JOKALARIA ".\\img\\mainChar.bmp"
+#define JOKALARIA1 ".\\img\\mainChar1.bmp"
+#define JOKALARIA2 ".\\img\\mainChar2.bmp"
+#define JOKALARIA3 ".\\img\\mainChar3.bmp"
+
 ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
 
+	//jokalariaren lurra//
 	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + 300)) {
 		jokalaria.lurra = plataforma1.posizioa.y - 50;
-		printf("en la plataforma1 ");
 	}
 	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + 300)) {
 		jokalaria.lurra = plataforma2.posizioa.y - 50;
-		printf("en la plataforma2 ");
 	}
 	else {
 		jokalaria.lurra = 400;
@@ -35,7 +39,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	else if ((jokalaria.posizioa.y == 400) && (jokalaria.saltatzen == 0)) {
 		jokalaria.dy = 0;
 	}
-
+	//----------------------------//
 
 	switch (ebentuaJasoGertatuBada()) {
 
@@ -52,6 +56,8 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 		jokalaria.ebentua = TECLA_RIGHT;
 
+
+
 		break;
 
 	case TECLA_LEFT:
@@ -67,6 +73,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 		jokalaria.ebentua = TECLA_LEFT;
 
+
 		break;
 
 	case TECLA_SPACE:
@@ -78,6 +85,8 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	default:
 
 		if (jokalaria.kont > 9) {
+
+			jokalaria.kont2 = 0;
 
 			if (jokalaria.dx > 0)
 			{
@@ -96,8 +105,62 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 		break;
 	}
 
-	printf("%d ", jokalaria.saltatzen);
+	//jokalariaren animazioaren egoera//
+	if ((jokalaria.dx > 0) || (eszenarioa.dx < 0)) {
+		jokalaria.egoera = 1;
+		jokalaria.kont2++;
 
+		if (jokalaria.kont2 > 7) {
+			jokalaria.egoera = 0;
+
+			if (jokalaria.kont2 > 14) {
+				jokalaria.kont2 = 0;
+			}
+		}
+	}
+	else if ((jokalaria.dx < 0) || (eszenarioa.dx > 0)) {
+		jokalaria.egoera = 2;
+		jokalaria.kont2++;
+
+		if (jokalaria.kont2 > 7) {
+			jokalaria.egoera = 3;
+
+			if (jokalaria.kont2 > 14) {
+				jokalaria.kont2 = 3;
+			}
+		}
+	}
+	//-------------------//
+
+	// jokalariaren postura //
+
+	switch (jokalaria.egoera){
+
+	case 0:
+
+		jokalaria = jokalariaEgoera0(jokalaria);
+
+		break;
+
+	case 1:
+
+		jokalaria = jokalariaEgoera1(jokalaria);
+
+		break;
+
+	case 2:
+
+		jokalaria = jokalariaEgoera2(jokalaria);
+
+		break;
+
+	case 3:
+
+		jokalaria = jokalariaEgoera3(jokalaria);
+
+		break;
+	}
+	//------------------------//
 	return jokalaria;
 
 }
@@ -163,4 +226,64 @@ ELEMENTUA salto(ELEMENTUA elementua) {
 	}
 
 	return elementua;
+}
+
+ELEMENTUA jokalariaEgoera0(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA);
+	irudiaMugitu(Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera1(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA1);
+	irudiaMugitu(Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera2(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA2);
+	irudiaMugitu(Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera3(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA3);
+	irudiaMugitu(Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
 }

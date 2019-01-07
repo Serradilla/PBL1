@@ -103,6 +103,7 @@ void jolastu(void) {
 	jokalaria.dy = 0;
 	jokalaria.kont = 0;
 	jokalaria.lurra = 400;
+	jokalaria.kont2 = 0;
 
 
 	EGOERA egoera;
