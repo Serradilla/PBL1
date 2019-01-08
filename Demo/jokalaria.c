@@ -20,19 +20,20 @@
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
-#define ALTUERAMAXIMOA 32  //Saltoaren potentzia definitzeko
+#define ALTUERAMAXIMOA 40  //Saltoaren potentzia definitzeko
+#define PLATAFORMALUZERA 300
 
 ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
 
 	//jokalariaren lurra//
-	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + 300)) {
-		jokalaria.lurra = plataforma1.posizioa.y - 50;
+	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + PLATAFORMALUZERA)) {
+		jokalaria.lurra = plataforma1.posizioa.y;
 	}
-	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + 300)) {
-		jokalaria.lurra = plataforma2.posizioa.y - 50;
+	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + PLATAFORMALUZERA)) {
+		jokalaria.lurra = plataforma2.posizioa.y;
 	}
 	else {
-		jokalaria.lurra = 400;
+		jokalaria.lurra = 350;
 	}
 	if ((jokalaria.posizioa.y < jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
 		jokalaria.dy = 4;
@@ -40,7 +41,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	else if ((jokalaria.posizioa.y == jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
 		jokalaria.dy = 0;
 	}
-	else if ((jokalaria.posizioa.y == 400) && (jokalaria.saltatzen == 0)) {
+	else if ((jokalaria.posizioa.y == 350) && (jokalaria.saltatzen == 0)) {
 		jokalaria.dy = 0;
 	}
 	//----------------------------//

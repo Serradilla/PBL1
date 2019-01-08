@@ -60,15 +60,13 @@ void jolastu(void) {
 	eszenarioa.dx = 0;
 	eszenarioa.dy = 0;
 
-	plataforma1.Id = plataformaSortu();
-	plataforma1.posizioa.x = 100;
-	plataforma1.posizioa.y = 350;
+	plataforma1.posizioa.x = 70;
+	plataforma1.posizioa.y = 160;
 	plataforma1.dx = 0;
 	plataforma1.dy = 0;
 
-	plataforma2.Id = plataformaSortu();
-	plataforma2.posizioa.x = 500;
-	plataforma2.posizioa.y = 350;
+	plataforma2.posizioa.x = 600;
+	plataforma2.posizioa.y = 160;
 	plataforma2.dx = 0;
 	plataforma2.dy = 0;
 
@@ -98,11 +96,11 @@ void jolastu(void) {
 
 	jokalaria.Id = jokalariaSortu();
 	jokalaria.posizioa.x = 50;
-	jokalaria.posizioa.y = 400;
+	jokalaria.posizioa.y = 350;
 	jokalaria.dx = 0;
 	jokalaria.dy = 0;
 	jokalaria.kont = 0;
-	jokalaria.lurra = 400;
+	jokalaria.lurra = 350;
 	jokalaria.kont2 = 0;
 
 
@@ -159,19 +157,6 @@ int jokalariaSortu(void){
 	int Id = -1;
 
 	Id = irudiaKargatu(JOKALARIA);
-	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
-
-	return Id;
-}
-
-int plataformaSortu(void) {
-
-	int Id = -1;
-
-	Id = irudiaKargatu(PLATAFORMA);
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
