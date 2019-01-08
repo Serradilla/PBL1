@@ -18,6 +18,10 @@
 #define JOKALARIA2 ".\\img\\mainChar2.bmp"
 #define JOKALARIA3 ".\\img\\mainChar3.bmp"
 
+#define ESKUBIKOBORDEA 601
+#define EZKERREKOBORDEA 10
+#define ALTUERAMAXIMOA 32  //Saltoaren potentzia definitzeko
+
 ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
 
 	//jokalariaren lurra//
@@ -45,7 +49,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 	case TECLA_RIGHT:
 
-		if (jokalaria.posizioa.x < 601) {
+		if (jokalaria.posizioa.x < ESKUBIKOBORDEA) {
 			jokalaria.dx = 3;
 		}
 		else {
@@ -62,7 +66,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 	case TECLA_LEFT:
 
-		if (jokalaria.posizioa.x > 10) {
+		if (jokalaria.posizioa.x > EZKERREKOBORDEA) {
 			jokalaria.dx = -3;
 		}
 		else {
@@ -171,7 +175,7 @@ ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 	case TECLA_RIGHT:
 
-		if ((jokalaria.posizioa.x > 600) && (eszenarioa.posizioa.x > -340)) {
+		if ((jokalaria.posizioa.x > ESKUBIKOBORDEA - 5) && (eszenarioa.posizioa.x > -340)) {
 			eszenarioa.dx = -6;
 		}
 		else {
@@ -182,7 +186,7 @@ ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 	case TECLA_LEFT:
 
-		if ((jokalaria.posizioa.x < 12) && (eszenarioa.posizioa.x < 0)) {
+		if ((jokalaria.posizioa.x < EZKERREKOBORDEA + 5) && (eszenarioa.posizioa.x < 0)) {
 			eszenarioa.dx = 6;
 		}
 		else {
@@ -206,14 +210,14 @@ ELEMENTUA salto(ELEMENTUA elementua) {
 
 	int grabitatea = 4;
 
-	if ((elementua.dy > -32) && (elementua.dy <= 0)) {
+	if ((elementua.dy > -ALTUERAMAXIMOA) && (elementua.dy <= 0)) {
 		elementua.dy -= grabitatea;
 	}
 
 	else {
 
-		if (elementua.dy == -32) {
-			elementua.dy = elementua.dy + 32;
+		if (elementua.dy == -ALTUERAMAXIMOA) {
+			elementua.dy = elementua.dy + ALTUERAMAXIMOA;
 		}
 
 		if (elementua.posizioa.y > elementua.lurra - grabitatea) {
