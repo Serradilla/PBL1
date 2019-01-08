@@ -1,0 +1,19 @@
+﻿  ebentoak.c
+  graphics.c
+  imagen.c
+  soinua.c
+  text.c
+  enemigo.c
+  jokalaria.c
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokalaria.c(30): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokalaria.c(33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokalaria.c(243): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokalaria.c(258): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokalaria.c(273): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokalaria.c(288): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
+  jokua.c
+c:\users\iker\desktop\prueba_pbl\definitivo\prueba\demo\jokua.c(241): warning C4244: 'función': conversión de 'double' a 'int'; posible pérdida de datos
+  main.c
+  plataformak.c
+  Generando código...
+  Demo.vcxproj -> C:\Users\Iker\Desktop\Prueba_pbl\definitivo\prueba\Debug\Demo.exe
