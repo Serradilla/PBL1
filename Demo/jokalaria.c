@@ -17,6 +17,7 @@
 #define JOKALARIA1 ".\\img\\mainChar1.bmp"
 #define JOKALARIA2 ".\\img\\mainChar2.bmp"
 #define JOKALARIA3 ".\\img\\mainChar3.bmp"
+#define JOKALARIA4 ".\\img\\mainChar4.bmp"
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
@@ -109,62 +110,12 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 		break;
 	}
+	
+	jokalaria = animazioa(jokalaria, eszenarioa);
 
-	//jokalariaren animazioaren egoera//
-	if ((jokalaria.dx > 0) || (eszenarioa.dx < 0)) {
-		jokalaria.egoera = 1;
-		jokalaria.kont2++;
+	jokalaria = animatu(jokalaria);
 
-		if (jokalaria.kont2 > 7) {
-			jokalaria.egoera = 0;
 
-			if (jokalaria.kont2 > 14) {
-				jokalaria.kont2 = 0;
-			}
-		}
-	}
-	else if ((jokalaria.dx < 0) || (eszenarioa.dx > 0)) {
-		jokalaria.egoera = 2;
-		jokalaria.kont2++;
-
-		if (jokalaria.kont2 > 7) {
-			jokalaria.egoera = 3;
-
-			if (jokalaria.kont2 > 14) {
-				jokalaria.kont2 = 3;
-			}
-		}
-	}
-	//-------------------//
-
-	// jokalariaren postura //
-
-	switch (jokalaria.egoera){
-
-	case 0:
-
-		jokalaria = jokalariaEgoera0(jokalaria);
-
-		break;
-
-	case 1:
-
-		jokalaria = jokalariaEgoera1(jokalaria);
-
-		break;
-
-	case 2:
-
-		jokalaria = jokalariaEgoera2(jokalaria);
-
-		break;
-
-	case 3:
-
-		jokalaria = jokalariaEgoera3(jokalaria);
-
-		break;
-	}
 	//------------------------//
 	return jokalaria;
 
@@ -233,6 +184,81 @@ ELEMENTUA salto(ELEMENTUA elementua) {
 	return elementua;
 }
 
+ELEMENTUA animatu(ELEMENTUA jokalaria) {
+
+	switch (jokalaria.egoera) {
+
+	case 0:
+
+		jokalaria = jokalariaEgoera0(jokalaria);
+
+		break;
+
+	case 1:
+
+		jokalaria = jokalariaEgoera1(jokalaria);
+
+		break;
+
+	case 2:
+
+		jokalaria = jokalariaEgoera2(jokalaria);
+
+		break;
+
+	case 3:
+
+		jokalaria = jokalariaEgoera3(jokalaria);
+
+		break;
+
+	case 4:
+
+		jokalaria = jokalariaEgoera4(jokalaria);
+	}
+
+	return jokalaria;
+}
+
+ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
+
+	if (jokalaria.dy != 0) {
+		jokalaria.egoera = 4;
+	}
+	else {
+
+		if ((jokalaria.dx > 0) || (eszenarioa.dx < 0)) {
+			jokalaria.egoera = 1;
+			jokalaria.kont2++;
+
+			if (jokalaria.kont2 > 5) {
+				jokalaria.egoera = 0;
+
+				if (jokalaria.kont2 > 10) {
+					jokalaria.kont2 = 0;
+				}
+			}
+		}
+		else if ((jokalaria.dx < 0) || (eszenarioa.dx > 0)) {
+			jokalaria.egoera = 2;
+			jokalaria.kont2++;
+
+			if (jokalaria.kont2 > 5) {
+				jokalaria.egoera = 3;
+
+				if (jokalaria.kont2 > 10) {
+					jokalaria.kont2 = 0;
+				}
+			}
+		}
+		else if (jokalaria.dx == 0) {
+			jokalaria.egoera = 0;
+		}
+	}
+
+	return jokalaria;
+}
+
 ELEMENTUA jokalariaEgoera0(ELEMENTUA jokalaria) {
 
 	int Id = -1;
@@ -285,6 +311,21 @@ ELEMENTUA jokalariaEgoera3(ELEMENTUA jokalaria) {
 	irudiaKendu(jokalaria.Id);
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA3);
+	irudiaMugitu(Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera4(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA4);
 	irudiaMugitu(Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
 	pantailaGarbitu();
 	irudiakMarraztu();
