@@ -12,7 +12,8 @@
 #include "jokua.h"
 #include "definizioak.h"
 #include "jokalaria.h"
-#include "enemigo.h"
+#include "sua.h"
+#include "dragoiak.h"
 #include "plataformak.h"
 
 
@@ -21,7 +22,6 @@
 #define ESZENARIOA ".\\img\\escenario.bmp"
 #define JOKALARIA ".\\img\\mainChar.bmp"
 #define ENEMIGO ".\\img\\enemyDragon.bmp"
-#define PLATAFORMA ".\\img\\descarga.bmp"
 #define SUA ".\\img\\fireBall.bmp"
 
 void jokoaAurkeztu(void)
@@ -112,25 +112,10 @@ void jolastu(void) {
 		eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
 		plataforma1 = plataformaFuntzioak(plataforma1, eszenarioa);
 		plataforma2 = plataformaFuntzioak(plataforma2, eszenarioa);
-
-		bolaBotata1 = suaBotata(bolarenDirekzioa1, sua1.posizioa, bolaBotata1);
-		bolaBotata2 = suaBotata(bolarenDirekzioa2, sua2.posizioa, bolaBotata2);
-
-		sua1.posizioa = jarraituBola(bolarenDirekzioa1, sua1.posizioa);
-		sua2.posizioa = jarraituBola(bolarenDirekzioa2, sua2.posizioa);
-
-		if (bolaBotata1 == 0)
-		{
-			enemigo.posizioa = jarraituAirean(jokalaria.posizioa, enemigo.posizioa);
-			sua1.posizioa = enemigo.posizioa;
-			bolarenDirekzioa1 = jokalaria.posizioa;
-		}
-		if (bolaBotata2 == 0)
-		{
-			enemigo1.posizioa = jarraituAirean(jokalaria.posizioa, enemigo1.posizioa);
-			sua2.posizioa = enemigo1.posizioa;
-			bolarenDirekzioa2 = jokalaria.posizioa;
-		}
+		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);
+		enemigo1 = dragoiarenFuntzioak2(enemigo1, enemigo, sua2, jokalaria);
+		sua1 = suaFuntzioak1(sua1, enemigo, jokalaria);
+		sua2 = suaFuntzioak2(sua2, enemigo1, jokalaria);
 
 		//------mugimenduen ejekuzioa-------//
 		jokalaria = mugitu(jokalaria);
