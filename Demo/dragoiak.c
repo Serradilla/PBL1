@@ -22,7 +22,8 @@
 
 int heganEgingoDu1 = 1;
 int heganEgingoDu2 = 1;
-int dragoienAnimazioarenKontadorea = 0;
+int dragoienAnimazioarenKontadorea1 = 0;
+int dragoienAnimazioarenKontadorea2 = 0;
 int dragoienArtekoDistantzia = 50;
 
 ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA sua1, ELEMENTUA jokalaria)
@@ -39,7 +40,7 @@ ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA 
 		}
 	}
 
-	enemigo = dragoienAnimazioa(enemigo);
+	enemigo = dragoienAnimazioa1(enemigo);
 
 	return enemigo;
 }
@@ -58,7 +59,7 @@ ELEMENTUA dragoiarenFuntzioak2(ELEMENTUA enemigo1, ELEMENTUA enemigo, ELEMENTUA 
 		}
 	}
 
-	enemigo1 = dragoienAnimazioa(enemigo1);
+	enemigo1 = dragoienAnimazioa2(enemigo1);
 
 	return enemigo1;
 }
@@ -116,9 +117,9 @@ POSIZIOA dragoienArtekoKolisioaSortu(POSIZIOA posizioa1, POSIZIOA posizioa2)
 	return posizioa1;
 }
 
-ELEMENTUA dragoienAnimazioa(ELEMENTUA enemigo)
+ELEMENTUA dragoienAnimazioa1(ELEMENTUA enemigo)
 {
-	switch (dragoienAnimazioarenKontadorea)
+	switch (dragoienAnimazioarenKontadorea1)
 	{
 	case 0:
 
@@ -209,11 +210,114 @@ ELEMENTUA dragoienAnimazioa(ELEMENTUA enemigo)
 	
 		break;
 	}
-	dragoienAnimazioarenKontadorea++;
+	dragoienAnimazioarenKontadorea1++;
 
-	if (dragoienAnimazioarenKontadorea > 80)
+	if (dragoienAnimazioarenKontadorea1 > 80)
 	{
-		dragoienAnimazioarenKontadorea = 0;
+		dragoienAnimazioarenKontadorea1 = 0;
+	}
+
+	return enemigo;
+}
+
+ELEMENTUA dragoienAnimazioa2(ELEMENTUA enemigo)
+{
+	switch (dragoienAnimazioarenKontadorea2)
+	{
+	case 0:
+
+		enemigo = enemigoSortu6(enemigo);
+
+		break;
+
+	case 5:
+
+		enemigo = enemigoSortu7(enemigo);
+
+		break;
+
+	case 10:
+
+		enemigo = enemigoSortu8(enemigo);
+
+		break;
+	case 15:
+
+		enemigo = enemigoSortu7(enemigo);
+
+		break;
+
+	case 20:
+
+		enemigo = enemigoSortu6(enemigo);
+
+		break;
+
+	case 25:
+
+		enemigo = enemigoSortu5(enemigo);
+
+		break;
+
+	case 30:
+
+		enemigo = enemigoSortu4(enemigo);
+
+		break;
+
+	case 40:
+
+		enemigo = enemigoSortu3(enemigo);
+
+		break;
+
+	case 45:
+
+		enemigo = enemigoSortu2(enemigo);
+
+		break;
+
+	case 50:
+
+		enemigo = enemigoSortu1(enemigo);
+
+		break;
+
+	case 55:
+
+		enemigo = enemigoSortu2(enemigo);
+
+		break;
+
+	case 60:
+
+		enemigo = enemigoSortu3(enemigo);
+
+		break;
+
+	case 65:
+
+		enemigo = enemigoSortu4(enemigo);
+
+		break;
+
+	case 70:
+
+		enemigo = enemigoSortu5(enemigo);
+
+		break;
+
+	case 75:
+
+		enemigo = enemigoSortu3(enemigo);
+
+		break;
+	}
+	dragoienAnimazioarenKontadorea2++;
+
+	if (dragoienAnimazioarenKontadorea2 > 80)
+	{
+		dragoienAnimazioarenKontadorea2 = 0;
 	}
 
 	return enemigo;
