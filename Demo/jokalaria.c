@@ -21,7 +21,7 @@
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
-#define ALTUERAMAXIMOA 40  //Saltoaren potentzia definitzeko
+#define ALTUERAMAXIMOA 39  //Saltoaren potentzia definitzeko (3-ren multiploa izan behar da)
 #define PLATAFORMALUZERA 300
 
 ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
@@ -37,7 +37,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 		jokalaria.lurra = 350;
 	}
 	if ((jokalaria.posizioa.y < jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
-		jokalaria.dy = 4;
+		jokalaria.dy = 3;
 	}
 	else if ((jokalaria.posizioa.y == jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
 		jokalaria.dy = 0;
@@ -90,7 +90,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 	default:
 
-		if (jokalaria.kont > 9) {
+		if (jokalaria.kont > 14) {
 
 			jokalaria.kont2 = 0;
 
@@ -160,7 +160,7 @@ ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 ELEMENTUA salto(ELEMENTUA elementua) {
 
-	int grabitatea = 4;
+	int grabitatea = 3;
 
 	if ((elementua.dy > -ALTUERAMAXIMOA) && (elementua.dy <= 0)) {
 		elementua.dy -= grabitatea;
