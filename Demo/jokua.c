@@ -21,7 +21,7 @@
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
 #define JOKALARIA ".\\img\\mainChar.bmp"
-#define ENEMIGO ".\\img\\enemyDragon.bmp"
+#define ENEMIGO ".\\img\\dragon1.bmp"
 #define SUA ".\\img\\fireBall.bmp"
 
 void jokoaAurkeztu(void)
@@ -131,7 +131,7 @@ void jolastu(void) {
 			jokalaria = salto(jokalaria);
 		}
 		//-----------------------------------//
-		Sleep(40);
+		Sleep(20);
 
 	} while (egoera == JOLASTEN);
 
