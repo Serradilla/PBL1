@@ -332,7 +332,6 @@ ELEMENTUA enemigoSortu1(ELEMENTUA enemigo) {
 	pantailaGarbitu();
 	irudiakMarraztu();
 	pantailaBerriztu();
-
 	return enemigo;
 }
 
