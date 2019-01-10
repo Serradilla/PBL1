@@ -24,6 +24,8 @@
 #define SUA ".\\img\\fireBall.bmp"
 #define ESQUELETO ".\\img\\esqueleto.bmp"
 
+#define MUSIKA ".\\sound\\SirOboe.wav"
+
 void jokoaAurkeztu(void)
 {
 	int ebentu = 0;
@@ -122,11 +124,13 @@ void jolastu(void) {
 	jokalaria.lurra = 350;
 	jokalaria.kont2 = 0;
 
+	audioInit();
+	loadTheMusic(MUSIKA);
+	playMusic();
 
 	EGOERA egoera;
 	egoera = JOLASTEN;
 	do{
-
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2);
 		//eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
 		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);

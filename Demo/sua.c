@@ -12,7 +12,7 @@
 int bolaBotata1 = 0;
 int bolaBotata2 = 0;
 int bolarenAbiadura = 3;
-int dragoiarenHeina = 100;
+int dragoiarenHeina = 250;
 POSIZIOA bolarenDirekzioa1 = { 50, 400 };
 POSIZIOA bolarenDirekzioa2 = { 50, 400 };
 
