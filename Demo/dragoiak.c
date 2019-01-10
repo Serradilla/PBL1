@@ -127,20 +127,56 @@ ELEMENTUA dragoienAnimazioa1(ELEMENTUA enemigo)
 
 		break;
 
-	case 5:
+	case 2:
 
 		enemigo = enemigoSortu2(enemigo);
 
 		break;
 
-	case 10:
+	case 4:
 
 		enemigo = enemigoSortu3(enemigo);
 
 		break;
-	case 15:
+	case 6:
 
 		enemigo = enemigoSortu4(enemigo);
+
+		break;
+
+	case 8:
+
+		enemigo = enemigoSortu5(enemigo);
+
+		break;
+
+	case 10:
+
+		enemigo = enemigoSortu6(enemigo);
+
+		break;
+
+	case 12:
+
+		enemigo = enemigoSortu7(enemigo);
+
+		break;
+
+	case 14:
+
+		enemigo = enemigoSortu8(enemigo);
+
+		break;
+
+	case 16:
+
+		enemigo = enemigoSortu7(enemigo);
+
+		break;
+
+	case 18:
+
+		enemigo = enemigoSortu6(enemigo);
 
 		break;
 
@@ -150,63 +186,28 @@ ELEMENTUA dragoienAnimazioa1(ELEMENTUA enemigo)
 
 		break;
 
-	case 25:
-
-		enemigo = enemigoSortu6(enemigo);
-
-		break;
-
-	case 30:
-
-		enemigo = enemigoSortu7(enemigo);
-
-		break;
-
-	case 40:
-
-		enemigo = enemigoSortu8(enemigo);
-
-		break;
-
-	case 45:
-
-		enemigo = enemigoSortu7(enemigo);
-
-		break;
-
-	case 50:
-
-		enemigo = enemigoSortu6(enemigo);
-
-		break;
-
-	case 55:
-
-		enemigo = enemigoSortu5(enemigo);
-
-		break;
-
-	case 60:
+	case 22:
 
 		enemigo = enemigoSortu4(enemigo);
 
 		break;
 
-	case 65:
+	case 24:
 
 		enemigo = enemigoSortu3(enemigo);
 
 		break;
 
-	case 70:
+	case 26:
 
 		enemigo = enemigoSortu2(enemigo);
 
 		break;
 	}
+
 	dragoienAnimazioarenKontadorea1++;
 
-	if (dragoienAnimazioarenKontadorea1 > 75)
+	if (dragoienAnimazioarenKontadorea1 > 28)
 	{
 		dragoienAnimazioarenKontadorea1 = 0;
 	}
@@ -224,78 +225,78 @@ ELEMENTUA dragoienAnimazioa2(ELEMENTUA enemigo)
 
 		break;
 
-	case 5:
+	case 2:
 
 		enemigo = enemigoSortu7(enemigo);
 
 		break;
 
-	case 10:
+	case 4:
 
 		enemigo = enemigoSortu8(enemigo);
 
 		break;
-	case 15:
+	case 6:
 
 		enemigo = enemigoSortu7(enemigo);
 
 		break;
 
-	case 20:
+	case 8:
 
 		enemigo = enemigoSortu6(enemigo);
 
 		break;
 
-	case 25:
+	case 10:
 
 		enemigo = enemigoSortu5(enemigo);
 
 		break;
 
-	case 30:
+	case 12:
 
 		enemigo = enemigoSortu4(enemigo);
 
 		break;
 
-	case 40:
+	case 14:
 
 		enemigo = enemigoSortu3(enemigo);
 
 		break;
 
-	case 45:
+	case 16:
 
 		enemigo = enemigoSortu2(enemigo);
 
 		break;
 
-	case 50:
+	case 18:
 
 		enemigo = enemigoSortu1(enemigo);
 
 		break;
 
-	case 55:
+	case 20:
 
 		enemigo = enemigoSortu2(enemigo);
 
 		break;
 
-	case 60:
+	case 22:
 
 		enemigo = enemigoSortu3(enemigo);
 
 		break;
 
-	case 65:
+	case 24:
 
 		enemigo = enemigoSortu4(enemigo);
 
 		break;
 
-	case 70:
+	case 26:
 
 		enemigo = enemigoSortu5(enemigo);
 
@@ -304,7 +305,7 @@ ELEMENTUA dragoienAnimazioa2(ELEMENTUA enemigo)
 
 	dragoienAnimazioarenKontadorea2++;
 
-	if (dragoienAnimazioarenKontadorea2 > 80)
+	if (dragoienAnimazioarenKontadorea2 > 28)
 	{
 		dragoienAnimazioarenKontadorea2 = 0;
 	}

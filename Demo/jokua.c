@@ -17,8 +17,6 @@
 #include "plataformak.h"
 #include "esqueleto.h"
 
-
-
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
 #define JOKALARIA ".\\img\\mainChar.bmp"
@@ -62,13 +60,13 @@ void jolastu(void) {
 	eszenarioa.dx = 0;
 	eszenarioa.dy = 0;
 
-	plataforma1.posizioa.x = 70;
-	plataforma1.posizioa.y = 160;
+	plataforma1.posizioa.x = 35;
+	plataforma1.posizioa.y = 123;
 	plataforma1.dx = 0;
 	plataforma1.dy = 0;
 
-	plataforma2.posizioa.x = 600;
-	plataforma2.posizioa.y = 160;
+	plataforma2.posizioa.x = 370;
+	plataforma2.posizioa.y = 123;
 	plataforma2.dx = 0;
 	plataforma2.dy = 0;
 
@@ -119,6 +117,7 @@ void jolastu(void) {
 	jokalaria.posizioa.y = 350;
 	jokalaria.dx = 0;
 	jokalaria.dy = 0;
+	jokalaria.saltatzen = 0;
 	jokalaria.kont = 0;
 	jokalaria.lurra = 350;
 	jokalaria.kont2 = 0;
@@ -130,8 +129,6 @@ void jolastu(void) {
 
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2);
 		eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
-		plataforma1 = plataformaFuntzioak(plataforma1, eszenarioa);
-		plataforma2 = plataformaFuntzioak(plataforma2, eszenarioa);
 		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);
 		enemigo1 = dragoiarenFuntzioak2(enemigo1, enemigo, sua2, jokalaria);
 		sua1 = suaFuntzioak1(sua1, enemigo, jokalaria);
@@ -142,7 +139,6 @@ void jolastu(void) {
 
 		//------mugimenduen ejekuzioa-------//
 		jokalaria = mugitu(jokalaria);
-		eszenarioa = mugitu(eszenarioa);
 		enemigo = mugitu(enemigo);
 		enemigo1 = mugitu(enemigo1);
 		plataforma1 = mugitu(plataforma1);
