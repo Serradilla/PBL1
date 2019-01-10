@@ -19,12 +19,22 @@
 #define ENEMIGO6 ".\\img\\dragon6.bmp"
 #define ENEMIGO7 ".\\img\\dragon7.bmp"
 #define ENEMIGO8 ".\\img\\dragon8.bmp"
+#define ENEMIGO9 ".\\img\\dragon9.bmp"
+#define ENEMIGO10 ".\\img\\dragon10.bmp"
+#define ENEMIGO11 ".\\img\\dragon11.bmp"
+#define ENEMIGO12 ".\\img\\dragon12.bmp"
+#define ENEMIGO13 ".\\img\\dragon13.bmp"
+#define ENEMIGO14 ".\\img\\dragon14.bmp"
+#define ENEMIGO15 ".\\img\\dragon15.bmp"
+#define ENEMIGO16 ".\\img\\dragon16.bmp"
 
 int heganEgingoDu1 = 1;
 int heganEgingoDu2 = 1;
 int dragoienAnimazioarenKontadorea1 = 0;
 int dragoienAnimazioarenKontadorea2 = 0;
-int dragoienArtekoDistantzia = 50;
+int dragoienArtekoDistantzia = 96;
+int eskerreraAlaEskumaraJoangoDaDragoia1 = 1;
+int eskerreraAlaEskumaraJoangoDaDragoia2 = -1;
 
 ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA sua1, ELEMENTUA jokalaria)
 {
@@ -39,6 +49,8 @@ ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA 
 			enemigo.posizioa = dragoienArtekoKolisioaSortu(enemigo.posizioa, enemigo1.posizioa);
 		}
 	}
+
+	eskerreraAlaEskumaraJoangoDaDragoia1 = ezkerreraAlaEskumaraDragoia1(jokalaria.posizioa, enemigo.posizioa);
 
 	enemigo = dragoienAnimazioa1(enemigo);
 
@@ -58,6 +70,8 @@ ELEMENTUA dragoiarenFuntzioak2(ELEMENTUA enemigo1, ELEMENTUA enemigo, ELEMENTUA 
 			enemigo1.posizioa = dragoienArtekoKolisioaSortu(enemigo1.posizioa, enemigo.posizioa);
 		}
 	}
+
+	eskerreraAlaEskumaraJoangoDaDragoia2 = ezkerreraAlaEskumaraDragoia2(jokalaria.posizioa, enemigo1.posizioa);
 
 	enemigo1 = dragoienAnimazioa2(enemigo1);
 
@@ -123,84 +137,182 @@ ELEMENTUA dragoienAnimazioa1(ELEMENTUA enemigo)
 	{
 	case 0:
 
-		enemigo = enemigoSortu1(enemigo);
-
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu1(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu9(enemigo);
+		}
+		
 		break;
 
 	case 2:
 
-		enemigo = enemigoSortu2(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu2(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu10(enemigo);
+		}
 
 		break;
 
 	case 4:
 
-		enemigo = enemigoSortu3(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu3(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu11(enemigo);
+		}
 
 		break;
 	case 6:
 
-		enemigo = enemigoSortu4(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu4(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu12(enemigo);
+		}
 
 		break;
 
 	case 8:
 
-		enemigo = enemigoSortu5(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu5(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu13(enemigo);
+		}
 
 		break;
 
 	case 10:
 
-		enemigo = enemigoSortu6(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu6(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu14(enemigo);
+		}
 
 		break;
 
 	case 12:
 
-		enemigo = enemigoSortu7(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu7(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu15(enemigo);
+		}
 
 		break;
 
 	case 14:
 
-		enemigo = enemigoSortu8(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu8(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu16(enemigo);
+		}
 
 		break;
 
 	case 16:
 
-		enemigo = enemigoSortu7(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu7(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu15(enemigo);
+		}
 
 		break;
 
 	case 18:
 
-		enemigo = enemigoSortu6(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu6(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu14(enemigo);
+		}
 
 		break;
 
 	case 20:
 
-		enemigo = enemigoSortu5(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu5(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu13(enemigo);
+		}
 
 		break;
 
 	case 22:
 
-		enemigo = enemigoSortu4(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu4(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu12(enemigo);
+		}
 
 		break;
 
 	case 24:
 
-		enemigo = enemigoSortu3(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu3(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu11(enemigo);
+		}
 
 		break;
 
 	case 26:
 
-		enemigo = enemigoSortu2(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == -1)
+		{
+			enemigo = enemigoSortu2(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia1 == 1)
+		{
+			enemigo = enemigoSortu10(enemigo);
+		}
 
 		break;
 	}
@@ -221,84 +333,182 @@ ELEMENTUA dragoienAnimazioa2(ELEMENTUA enemigo)
 	{
 	case 0:
 
-		enemigo = enemigoSortu6(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu6(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu14(enemigo);
+		}
 
 		break;
 
 	case 2:
 
-		enemigo = enemigoSortu7(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu7(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu15(enemigo);
+		}
 
 		break;
 
 	case 4:
 
-		enemigo = enemigoSortu8(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu8(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu16(enemigo);
+		}
 
 		break;
 	case 6:
 
-		enemigo = enemigoSortu7(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu7(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu15(enemigo);
+		}
 
 		break;
 
 	case 8:
 
-		enemigo = enemigoSortu6(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu6(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu14(enemigo);
+		}
 
 		break;
 
 	case 10:
 
-		enemigo = enemigoSortu5(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu5(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu13(enemigo);
+		}
 
 		break;
 
 	case 12:
 
-		enemigo = enemigoSortu4(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu4(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu12(enemigo);
+		}
 
 		break;
 
 	case 14:
 
-		enemigo = enemigoSortu3(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu3(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu11(enemigo);
+		}
 
 		break;
 
 	case 16:
 
-		enemigo = enemigoSortu2(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu2(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu10(enemigo);
+		}
 
 		break;
 
 	case 18:
 
-		enemigo = enemigoSortu1(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu1(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu9(enemigo);
+		}
 
 		break;
 
 	case 20:
 
-		enemigo = enemigoSortu2(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu2(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu10(enemigo);
+		}
 
 		break;
 
 	case 22:
 
-		enemigo = enemigoSortu3(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu3(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu11(enemigo);
+		}
 
 		break;
 
 	case 24:
 
-		enemigo = enemigoSortu4(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu4(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu12(enemigo);
+		}
 
 		break;
 
 	case 26:
 
-		enemigo = enemigoSortu5(enemigo);
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == -1)
+		{
+			enemigo = enemigoSortu5(enemigo);
+		}
+		if (eskerreraAlaEskumaraJoangoDaDragoia2 == 1)
+		{
+			enemigo = enemigoSortu13(enemigo);
+		}
 
 		break;
 	}
@@ -414,4 +624,134 @@ ELEMENTUA enemigoSortu8(ELEMENTUA enemigo) {
 	pantailaBerriztu();
 
 	return enemigo;
+}
+ELEMENTUA enemigoSortu9(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO9);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu10(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO10);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu11(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO11);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu12(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO12);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu13(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO13);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu14(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO14);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu15(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO15);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+ELEMENTUA enemigoSortu16(ELEMENTUA enemigo) {
+
+	irudiaKendu(enemigo.Id);
+
+	enemigo.Id = irudiaKargatu(ENEMIGO16);
+	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return enemigo;
+}
+
+int ezkerreraAlaEskumaraDragoia1(POSIZIOA jokalaria, POSIZIOA dragoia)
+{
+	if (jokalaria.x - dragoia.x > 0)
+	{
+		eskerreraAlaEskumaraJoangoDaDragoia1 = 1;
+	}
+	else
+	{
+		eskerreraAlaEskumaraJoangoDaDragoia1 = -1;
+	}
+
+	return eskerreraAlaEskumaraJoangoDaDragoia1;
+}
+
+int ezkerreraAlaEskumaraDragoia2(POSIZIOA jokalaria, POSIZIOA dragoia)
+{
+	if (jokalaria.x - dragoia.x > 0)
+	{
+		eskerreraAlaEskumaraJoangoDaDragoia2 = 1;
+	}
+	else
+	{
+		eskerreraAlaEskumaraJoangoDaDragoia2 = -1;
+	}
+
+	return eskerreraAlaEskumaraJoangoDaDragoia2;
 }

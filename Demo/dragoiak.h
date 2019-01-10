@@ -23,5 +23,15 @@ ELEMENTUA enemigoSortu5(ELEMENTUA enemigo);
 ELEMENTUA enemigoSortu6(ELEMENTUA enemigo);
 ELEMENTUA enemigoSortu7(ELEMENTUA enemigo);
 ELEMENTUA enemigoSortu8(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu9(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu10(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu11(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu12(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu13(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu14(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu15(ELEMENTUA enemigo);
+ELEMENTUA enemigoSortu16(ELEMENTUA enemigo);
+int ezkerreraAlaEskumaraDragoia1(POSIZIOA jokalaria, POSIZIOA dragoia);
+int ezkerreraAlaEskumaraDragoia2(POSIZIOA jokalaria, POSIZIOA dragoia);
 
 #endif
