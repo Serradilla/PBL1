@@ -128,7 +128,7 @@ void jolastu(void) {
 	do{
 
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2);
-		eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
+		//eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
 		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);
 		enemigo1 = dragoiarenFuntzioak2(enemigo1, enemigo, sua2, jokalaria);
 		sua1 = suaFuntzioak1(sua1, enemigo, jokalaria);
@@ -139,6 +139,7 @@ void jolastu(void) {
 
 		//------mugimenduen ejekuzioa-------//
 		jokalaria = mugitu(jokalaria);
+		//eszenarioa = mugitu(eszenarioa);
 		enemigo = mugitu(enemigo);
 		enemigo1 = mugitu(enemigo1);
 		plataforma1 = mugitu(plataforma1);

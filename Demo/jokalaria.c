@@ -21,12 +21,7 @@
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
-#define ALTUERAMAXIMOA 30  //Saltoaren potentzia definitzeko (3-ren multiploa izan behar da)
-#define PLATAFORMALUZERA 190
-
-int jokalariarenGrabitatea = 0;
-int plataformaGainean = 0;
-int saltoEginAhalDu = 1;
+#define PLATAFORMALUZERA 170
 
 ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
 
@@ -40,14 +35,15 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	else {
 		jokalaria.lurra = 350;
 	}
-	if ((jokalaria.posizioa.y == jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
-		jokalaria.dy = 0;
-		plataformaGainean = 1;
+	if ((jokalaria.posizioa.y < jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
+		jokalaria.dy += 1;
 	}
-	else if ((jokalaria.posizioa.y == 350) && (jokalaria.saltatzen == 0)) {
+	else if ((jokalaria.posizioa.y >= 350) && (jokalaria.saltatzen == 0) && (jokalaria.dy > 0)) {
 		jokalaria.dy = 0;
-		plataformaGainean = 1;
 	}
+
+	printf("%f ",jokalaria.posizioa.y);
+
 	//----------------------------//
 
 	switch (ebentuaJasoGertatuBada()) {
@@ -55,7 +51,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	case TECLA_RIGHT:
 
 		if (jokalaria.posizioa.x < ESKUBIKOBORDEA) {
-			jokalaria.dx = 5;
+			jokalaria.dx = 3;
 		}
 		else {
 			jokalaria.dx = 0;
@@ -72,7 +68,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	case TECLA_LEFT:
 
 		if (jokalaria.posizioa.x > EZKERREKOBORDEA) {
-			jokalaria.dx = -5;
+			jokalaria.dx = -3;
 		}
 		else {
 			jokalaria.dx = 0;
@@ -87,9 +83,9 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 	case TECLA_SPACE:
 
-		if (saltoEginAhalDu == 1)
-		{
+		if (jokalaria.dy == 0) {
 			jokalaria.saltatzen = 1;
+			jokalaria.dy = -22;
 		}
 
 		break;
@@ -120,15 +116,6 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	jokalaria = animazioa(jokalaria, eszenarioa);
 
 	jokalaria = animatu(jokalaria);
-
-   	if (jokalaria.saltatzen == 1)
-	{
-		jokalariarenGrabitatea = -22;
-		jokalaria.saltatzen = 0;
-	}
-
-	jokalaria = salto(jokalaria);
-
 
 
 	//------------------------//
@@ -175,28 +162,22 @@ ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 ELEMENTUA salto(ELEMENTUA elementua) {
 
-	int grabitatea = 0;
+	int grabitatea = 1;
 
-	if (elementua.posizioa.y >= 350)
-	{
-		if (jokalariarenGrabitatea != -22)
-		{
-			jokalariarenGrabitatea = 0;
+	if (elementua.dy <= 0) {
+		elementua.dy += grabitatea;
+	}
+
+	else {
+
+		if (elementua.posizioa.y > elementua.lurra) {
+			elementua.saltatzen = 0;
+			elementua.dy = 0;
 		}
-		elementua.posizioa.y = 350;
-		grabitatea = 0;
-		saltoEginAhalDu = 1;
+		else {
+			elementua.dy += grabitatea;
+		}
 	}
-	else
-	{
-		grabitatea = 1;
-		saltoEginAhalDu = 0;
-	}
-
-	jokalariarenGrabitatea += grabitatea;
-
-	elementua.dy = jokalariarenGrabitatea; 
-
 
 	return elementua;
 }
@@ -278,6 +259,8 @@ ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 ELEMENTUA jokalariaEgoera0(ELEMENTUA jokalaria) {
 
+	int Id = -1;
+
 	irudiaKendu(jokalaria.Id);
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA);
@@ -290,6 +273,8 @@ ELEMENTUA jokalariaEgoera0(ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA jokalariaEgoera1(ELEMENTUA jokalaria) {
+
+	int Id = -1;
 
 	irudiaKendu(jokalaria.Id);
 
@@ -304,6 +289,8 @@ ELEMENTUA jokalariaEgoera1(ELEMENTUA jokalaria) {
 
 ELEMENTUA jokalariaEgoera2(ELEMENTUA jokalaria) {
 
+	int Id = -1;
+
 	irudiaKendu(jokalaria.Id);
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA2);
@@ -317,6 +304,8 @@ ELEMENTUA jokalariaEgoera2(ELEMENTUA jokalaria) {
 
 ELEMENTUA jokalariaEgoera3(ELEMENTUA jokalaria) {
 
+	int Id = -1;
+
 	irudiaKendu(jokalaria.Id);
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA3);
@@ -329,6 +318,8 @@ ELEMENTUA jokalariaEgoera3(ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA jokalariaEgoera4(ELEMENTUA jokalaria) {
+
+	int Id = -1;
 
 	irudiaKendu(jokalaria.Id);
 
