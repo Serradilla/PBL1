@@ -30,14 +30,16 @@
 
 void jokoaAurkeztu(void)
 {
-	int ebentu = 0;
+	int sakatu = 0;
 
-	sarreraMezuaIdatzi();
-	instrukzioakIdatzi();
+	menuText();
+	menuImages();
+
 	do
 	{
-		ebentu = ebentuaJasoGertatuBada();
-	} while (ebentu != TECLA_RETURN);
+		sakatu = startSakatu();
+	} while (sakatu == 0);
+
 	pantailaGarbitu();
 	pantailaBerriztu();
 }
