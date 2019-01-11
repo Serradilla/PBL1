@@ -16,6 +16,7 @@
 #include "dragoiak.h"
 #include "plataformak.h"
 #include "esqueleto.h"
+#include "bizitza.h"
 
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
@@ -23,6 +24,7 @@
 #define ENEMIGO ".\\img\\dragon1.bmp"
 #define SUA ".\\img\\fireBall.bmp"
 #define ESQUELETO ".\\img\\esqueleto.bmp"
+#define BIZITZA6 ".\\img\\6heart.bmp"
 
 #define MUSIKA ".\\sound\\SirOboe.wav"
 
@@ -54,7 +56,7 @@ void instrukzioakIdatzi() {
 
 void jolastu(void) {
 
-	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1,esqueleto2,esqueleto3;
+	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1,esqueleto2,esqueleto3,bizitza;
 
 	eszenarioa.Id = eszenarioaSortu();
 	eszenarioa.posizioa.x = 0;
@@ -114,6 +116,12 @@ void jolastu(void) {
 	esqueleto3.dy = 0;
 	esqueleto3.dx = 0;
 
+	bizitza.Id = bizitzaSortu();
+	bizitza.posizioa.x = 50;
+	bizitza.posizioa.y = 20;
+	bizitza.dy = 0;
+	bizitza.dx = 0;
+
 	jokalaria.Id = jokalariaSortu();
 	jokalaria.posizioa.x = 50;
 	jokalaria.posizioa.y = 350;
@@ -123,6 +131,8 @@ void jolastu(void) {
 	jokalaria.kont = 0;
 	jokalaria.lurra = 350;
 	jokalaria.kont2 = 0;
+	jokalaria.kont3 = 0;
+	jokalaria.bizitza = 6;
 
 	audioInit();
 	loadTheMusic(MUSIKA);
@@ -132,7 +142,7 @@ void jolastu(void) {
 	egoera = JOLASTEN;
 	enemigoKont = 6;
 	do{
-		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2);
+		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2,esqueleto1,esqueleto2,esqueleto3);
 		//eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
 		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);
 		enemigo1 = dragoiarenFuntzioak2(enemigo1, enemigo, sua2, jokalaria);
@@ -141,6 +151,7 @@ void jolastu(void) {
 		esqueleto1 = esqueletoFuntzioak(esqueleto1, jokalaria);
 		esqueleto2 = esqueletoFuntzioak(esqueleto2, jokalaria);
 		esqueleto3 = esqueletoFuntzioak(esqueleto3, jokalaria);
+		bizitza = bizitzaFuntzioak(bizitza,jokalaria);
 
 		//------mugimenduen ejekuzioa-------//
 		jokalaria = mugitu(jokalaria);
@@ -154,6 +165,7 @@ void jolastu(void) {
 		esqueleto1 = mugitu(esqueleto1);
 		esqueleto2 = mugitu(esqueleto2);
 		esqueleto3 = mugitu(esqueleto3);
+		bizitza = mugitu(bizitza);
 
 		if (jokalaria.saltatzen == 1) {
 			jokalaria = salto(jokalaria);
@@ -163,6 +175,19 @@ void jolastu(void) {
 
 	} while (egoera == JOLASTEN);
 
+}
+
+int bizitzaSortu(void) {
+
+	int Id = -1;
+
+	Id = irudiaKargatu(BIZITZA6);
+	irudiaMugitu(Id, 0, 400);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return Id;
 }
 
 int jokalariaSortu(void){

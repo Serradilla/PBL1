@@ -23,27 +23,26 @@
 #define EZKERREKOBORDEA 10
 #define PLATAFORMALUZERA 170
 
-ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2) {
+ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2,ELEMENTUA esqueleto1, ELEMENTUA esqueleto2, ELEMENTUA esqueleto3) {
 
 	//jokalariaren lurra//
-	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + PLATAFORMALUZERA)) {
+	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + PLATAFORMALUZERA) && (jokalaria.posizioa.y <= plataforma1.posizioa.y)) {
 		jokalaria.lurra = plataforma1.posizioa.y;
 	}
-	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + PLATAFORMALUZERA)) {
+	else if ((jokalaria.posizioa.x > plataforma2.posizioa.x) && (jokalaria.posizioa.x < plataforma2.posizioa.x + PLATAFORMALUZERA) && (jokalaria.posizioa.y <= plataforma1.posizioa.y)) {
 		jokalaria.lurra = plataforma2.posizioa.y;
 	}
 	else {
 		jokalaria.lurra = 350;
 	}
-	if ((jokalaria.posizioa.y < jokalaria.lurra) && (jokalaria.saltatzen == 0)) {
-		jokalaria.dy += 1;
-	}
-	else if ((jokalaria.posizioa.y >= 350) && (jokalaria.saltatzen == 0) && (jokalaria.dy > 0)) {
+
+	printf("%d ", jokalaria.lurra);
+
+
+	if (jokalaria.posizioa.y >= jokalaria.lurra) {
+		jokalaria.posizioa.y = jokalaria.lurra;
 		jokalaria.dy = 0;
 	}
-
-	printf("%f ",jokalaria.posizioa.y);
-
 	//----------------------------//
 
 	switch (ebentuaJasoGertatuBada()) {
@@ -117,11 +116,26 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 	jokalaria = animatu(jokalaria);
 
+	jokalaria = jokalariaEtaEsqueleto(jokalaria, esqueleto1);
+	jokalaria = jokalariaEtaEsqueleto(jokalaria, esqueleto2);
+	jokalaria = jokalariaEtaEsqueleto(jokalaria, esqueleto3);
+
 
 	//------------------------//
 	return jokalaria;
 
 }
+
+ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto) {
+	if ((esqueleto.posizioa.x + 10 > jokalaria.posizioa.x) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10) && (jokalaria.kont3 > 70)) {
+		jokalaria.bizitza--;
+		jokalaria.kont3 = 0;
+	}
+	jokalaria.kont3++;
+
+	return jokalaria;
+}
+
 
 ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
@@ -164,20 +178,11 @@ ELEMENTUA salto(ELEMENTUA elementua) {
 
 	int grabitatea = 1;
 
-	if (elementua.dy <= 0) {
-		elementua.dy += grabitatea;
+	if ((elementua.posizioa.y > elementua.lurra)) {
+		elementua.posizioa.y = elementua.lurra;
 	}
 
-	else {
-
-		if (elementua.posizioa.y > elementua.lurra) {
-			elementua.saltatzen = 0;
-			elementua.dy = 0;
-		}
-		else {
-			elementua.dy += grabitatea;
-		}
-	}
+	elementua.dy += grabitatea;
 
 	return elementua;
 }

@@ -2,7 +2,8 @@
 #define JOKALARIA_H_
 #include "definizioak.h"
 
-ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2);
+ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2, ELEMENTUA esqueleto1, ELEMENTUA esqueleto2, ELEMENTUA esqueleto3);
+ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto);
 ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa);
 ELEMENTUA salto(ELEMENTUA elementua);
 ELEMENTUA jokalariaEgoera1(ELEMENTUA jokalaria);
