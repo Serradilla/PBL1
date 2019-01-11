@@ -130,6 +130,7 @@ void jolastu(void) {
 
 	EGOERA egoera;
 	egoera = JOLASTEN;
+	enemigoKont = 6;
 	do{
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2);
 		//eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);

@@ -12,5 +12,6 @@ ELEMENTUA eskeletoSortu3(ELEMENTUA esqueleto);
 ELEMENTUA eskeletoSortu4(ELEMENTUA esqueleto);
 ELEMENTUA eskeletoSortu5(ELEMENTUA esqueleto);
 ELEMENTUA eskeletoSortu6(ELEMENTUA esqueleto);
+ELEMENTUA esqueletoEtaJokalaria(ELEMENTUA esqueleto, ELEMENTUA jokalaria);
 
 #endif

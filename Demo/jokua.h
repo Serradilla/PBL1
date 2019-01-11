@@ -14,6 +14,9 @@ int enemigo1Sortu(void);
 int plataformaSortu(void);
 int sua1Sortu(void);
 int sua2Sortu(void);
+int esqueletoSortu(void);
 ELEMENTUA mugitu(ELEMENTUA elementua);
+
+int enemigoKont;
 
 #endif
