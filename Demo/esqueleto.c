@@ -99,7 +99,7 @@ ELEMENTUA eskeletoarenAnimazioa(ELEMENTUA esqueleto)
 
 	case 2:
 
-		if (ezkerreraAlaEskumaraEskeletoa == -1)
+		if (eskerreraAlaEskumaraJoangoDaEskeletoa == -1)
 		{
 			esqueleto = eskeletoSortu3(esqueleto);
 		}
