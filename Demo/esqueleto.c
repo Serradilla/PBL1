@@ -46,7 +46,7 @@ ELEMENTUA esqueletoFuntzioak(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (esqueleto.posizioa.x == jokalaria.posizioa.x) {
+	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
 
 		enemigoKont--;
 

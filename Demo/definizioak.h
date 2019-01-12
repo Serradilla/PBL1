@@ -17,6 +17,7 @@ typedef struct S_ELEMENTUA {
 	int kont; // jokalariaren mugimendua egiteko
 	int kont2; //jokalariaren animaziorako
 	int kont3; //jokalaria bizitza galtzerakoan inbentzibilitate dembora bat izango du
+	int kont4; //jokalariaren erasotze animazioa egiteko
 	int egoera; //jokalariaren egoera animazioa egiteko
 	int ebentua; //eszenarioa mugitzeko
 	int lurra; // jokalariaren lurra

@@ -19,6 +19,8 @@
 #define JOKALARIA3 ".\\img\\mainChar3.bmp"
 #define JOKALARIA4 ".\\img\\mainChar4.bmp"
 #define JOKALARIA5 ".\\img\\mainChar5.bmp"
+#define JOKALARIA6 ".\\img\\mainChar6.bmp"
+#define JOKALARIA7 ".\\img\\mainChar7.bmp"
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
@@ -85,6 +87,20 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 			jokalaria.saltatzen = 1;
 			jokalaria.dy = -22;
 		}
+
+		break;
+
+	case TECLA_d:
+
+		jokalaria.egoera = 7;
+		jokalaria.kont4 = 0;
+		
+		break;
+
+	case TECLA_a:
+
+		jokalaria.egoera = 6;
+		jokalaria.kont4 = 0;
 
 		break;
 
@@ -225,6 +241,18 @@ ELEMENTUA animatu(ELEMENTUA jokalaria) {
 		jokalaria = jokalariaEgoera5(jokalaria);
 
 		break;
+
+	case 6:
+
+		jokalaria = jokalariaEgoera6(jokalaria);
+
+		break;
+
+	case 7:
+
+		jokalaria = jokalariaEgoera7(jokalaria);
+
+		break;
 	}
 
 
@@ -233,46 +261,59 @@ ELEMENTUA animatu(ELEMENTUA jokalaria) {
 
 ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
-	if (jokalaria.dy != 0) {
-
-		if (jokalaria.dx < 0){
-			jokalaria.egoera = 5;
-		}
-		else {
-			jokalaria.egoera = 4;
-		}
-
+	if ((jokalaria.egoera == 7) && (jokalaria.kont4 < 15)) {
+		jokalaria.egoera = 7;
+		jokalaria.kont4++;
+	}
+	else if ((jokalaria.egoera == 6) && (jokalaria.kont4 < 15)) {
+		jokalaria.egoera = 6;
+		jokalaria.kont4++;
 	}
 	else {
 
-		if ((jokalaria.dx > 0) || (eszenarioa.dx < 0)) {
-			jokalaria.egoera = 1;
-			jokalaria.kont2++;
+		if (jokalaria.dy != 0) {
 
-			if (jokalaria.kont2 > 5) {
+			if (jokalaria.dx < 0) {
+				jokalaria.egoera = 5;
+			}
+			else {
+				jokalaria.egoera = 4;
+			}
+
+		}
+		else {
+
+			if ((jokalaria.dx > 0) || (eszenarioa.dx < 0)) {
+				jokalaria.egoera = 1;
+				jokalaria.kont2++;
+
+				if (jokalaria.kont2 > 5) {
+					jokalaria.egoera = 0;
+
+					if (jokalaria.kont2 > 10) {
+						jokalaria.kont2 = 0;
+					}
+				}
+			}
+			else if ((jokalaria.dx < 0) || (eszenarioa.dx > 0)) {
+				jokalaria.egoera = 2;
+				jokalaria.kont2++;
+
+				if (jokalaria.kont2 > 5) {
+					jokalaria.egoera = 3;
+
+					if (jokalaria.kont2 > 10) {
+						jokalaria.kont2 = 0;
+					}
+				}
+			}
+			else if (jokalaria.dx == 0) {
 				jokalaria.egoera = 0;
-
-				if (jokalaria.kont2 > 10) {
-					jokalaria.kont2 = 0;
-				}
 			}
-		}
-		else if ((jokalaria.dx < 0) || (eszenarioa.dx > 0)) {
-			jokalaria.egoera = 2;
-			jokalaria.kont2++;
-
-			if (jokalaria.kont2 > 5) {
-				jokalaria.egoera = 3;
-
-				if (jokalaria.kont2 > 10) {
-					jokalaria.kont2 = 0;
-				}
-			}
-		}
-		else if (jokalaria.dx == 0) {
-			jokalaria.egoera = 0;
 		}
 	}
+
+
 
 	return jokalaria;
 }
@@ -359,6 +400,36 @@ ELEMENTUA jokalariaEgoera5(ELEMENTUA jokalaria) {
 	irudiaKendu(jokalaria.Id);
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA5);
+	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera6(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA6);
+	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera7(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA7);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
 	pantailaGarbitu();
 	irudiakMarraztu();
