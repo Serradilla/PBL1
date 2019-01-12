@@ -33,5 +33,7 @@ ELEMENTUA enemigoSortu15(ELEMENTUA enemigo);
 ELEMENTUA enemigoSortu16(ELEMENTUA enemigo);
 int ezkerreraAlaEskumaraDragoia1(POSIZIOA jokalaria, POSIZIOA dragoia);
 int ezkerreraAlaEskumaraDragoia2(POSIZIOA jokalaria, POSIZIOA dragoia);
+ELEMENTUA dragoiaEtaJokalaria1(ELEMENTUA dragoia, ELEMENTUA jokalaria);
+ELEMENTUA dragoiaEtaJokalaria2(ELEMENTUA dragoia, ELEMENTUA jokalaria);
 
 #endif

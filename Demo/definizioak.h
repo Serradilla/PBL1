@@ -21,6 +21,7 @@ typedef struct S_ELEMENTUA {
 	int ebentua; //eszenarioa mugitzeko
 	int lurra; // jokalariaren lurra
 	int bizitza;
+	int mugitzen; // elementua mugitzen den edo ez zehazten du
 
 }ELEMENTUA;
 

@@ -6,6 +6,7 @@
 #include "soinua.h"
 #include "sua.h"
 #include "dragoiak.h"
+#include "jokua.h"
 
 #include <stdio.h>
 #include <windows.h>
@@ -40,7 +41,7 @@ ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA 
 {
 	if (suaBotata(bolarenDirekzioa1, sua1.posizioa, bolaBotata1) == 0)
 	{
-		if (heganEginAhalDu(enemigo.posizioa, enemigo1.posizioa, heganEgingoDu1) == 1)
+		if ((heganEginAhalDu(enemigo.posizioa, enemigo1.posizioa, heganEgingoDu1) == 1) && (enemigo.mugitzen == 1))
 		{
 			enemigo.posizioa = jarraituAirean(jokalaria.posizioa, enemigo.posizioa);
 		}
@@ -54,14 +55,39 @@ ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA 
 
 	enemigo = dragoienAnimazioa1(enemigo);
 
+	enemigo = dragoiaEtaJokalaria1(enemigo, jokalaria);
+
 	return enemigo;
+}
+
+ELEMENTUA dragoiaEtaJokalaria1(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
+	if (dragoia.posizioa.y >= jokalaria.posizioa.y) {
+
+		enemigoKont--;
+
+		if (enemigoKont > 5) {
+			irudiaMugitu(dragoia.Id, -10, 350);
+			dragoia.posizioa.x = -100;
+			dragoia.posizioa.y = 350;
+		}
+		else {
+			irudiaMugitu(dragoia.Id, -10, 350);
+			dragoia.posizioa.x = -102;
+			dragoia.posizioa.y = 0;
+			dragoia.mugitzen = 0;
+		}
+
+
+	}
+
+	return dragoia;
 }
 
 ELEMENTUA dragoiarenFuntzioak2(ELEMENTUA enemigo1, ELEMENTUA enemigo, ELEMENTUA sua2, ELEMENTUA jokalaria)
 {
 	if (suaBotata(bolarenDirekzioa2, sua2.posizioa, bolaBotata2) == 0)
 	{
-		if (heganEginAhalDu(enemigo1.posizioa, enemigo.posizioa, heganEgingoDu2) == 1)
+		if ((heganEginAhalDu(enemigo1.posizioa, enemigo.posizioa, heganEgingoDu2) == 1) && (enemigo1.mugitzen == 1))
 		{
 			enemigo1.posizioa = jarraituAirean(jokalaria.posizioa, enemigo1.posizioa);
 		}
@@ -75,7 +101,32 @@ ELEMENTUA dragoiarenFuntzioak2(ELEMENTUA enemigo1, ELEMENTUA enemigo, ELEMENTUA 
 
 	enemigo1 = dragoienAnimazioa2(enemigo1);
 
+	enemigo1 = dragoiaEtaJokalaria2(enemigo1, jokalaria);
+
 	return enemigo1;
+}
+
+ELEMENTUA dragoiaEtaJokalaria2(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
+	if (dragoia.posizioa.y >= jokalaria.posizioa.y) {
+
+		enemigoKont--;
+
+		if (enemigoKont > 5) {
+			irudiaMugitu(dragoia.Id, -10, 350);
+			dragoia.posizioa.x = 800;
+			dragoia.posizioa.y = 0;
+		}
+		else {
+			irudiaMugitu(dragoia.Id, -10, 350);
+			dragoia.posizioa.x = 800;
+			dragoia.posizioa.y = 0;
+			dragoia.mugitzen = 0;
+		}
+
+
+	}
+
+	return dragoia;
 }
 
 POSIZIOA jarraituAirean(POSIZIOA posizioa1, POSIZIOA posizioa2)

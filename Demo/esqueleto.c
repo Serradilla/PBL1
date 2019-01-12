@@ -26,10 +26,10 @@ int eskerreraAlaEskumaraJoangoDaEskeletoa = 1;
 
 
 ELEMENTUA esqueletoFuntzioak(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.posizioa.x > -101)) {
+	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
 		esqueleto.dx = 1;
 	}
-	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.posizioa.x > -101)) {
+	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
 		esqueleto.dx = -1;
 	}
 	else {
@@ -50,22 +50,21 @@ ELEMENTUA esqueletoEtaJokalaria(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 
 		enemigoKont--;
 
-		if (enemigoKont > 2) {
+		if (enemigoKont > 4) {
 			irudiaMugitu(esqueleto.Id, -10, 350);
 			esqueleto.posizioa.x = -100;
 			esqueleto.posizioa.y = 350;
+			esqueleto.mugitzen = 1;
 		}
 		else {
 			irudiaMugitu(esqueleto.Id, -10, 350);
 			esqueleto.posizioa.x = -102;
 			esqueleto.posizioa.y = 350;
+			esqueleto.mugitzen = 0;
 		}
 
 
 	}
-
-	printf("%d ", enemigoKont);
-
 	return esqueleto;
 }
 

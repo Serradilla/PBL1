@@ -18,6 +18,7 @@
 #define JOKALARIA2 ".\\img\\mainChar2.bmp"
 #define JOKALARIA3 ".\\img\\mainChar3.bmp"
 #define JOKALARIA4 ".\\img\\mainChar4.bmp"
+#define JOKALARIA5 ".\\img\\mainChar5.bmp"
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
@@ -35,8 +36,6 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	else {
 		jokalaria.lurra = 350;
 	}
-
-	printf("%d ", jokalaria.lurra);
 
 
 	if (jokalaria.posizioa.y >= jokalaria.lurra) {
@@ -218,7 +217,16 @@ ELEMENTUA animatu(ELEMENTUA jokalaria) {
 	case 4:
 
 		jokalaria = jokalariaEgoera4(jokalaria);
+
+		break;
+
+	case 5:
+
+		jokalaria = jokalariaEgoera5(jokalaria);
+
+		break;
 	}
+
 
 	return jokalaria;
 }
@@ -226,7 +234,14 @@ ELEMENTUA animatu(ELEMENTUA jokalaria) {
 ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 	if (jokalaria.dy != 0) {
-		jokalaria.egoera = 4;
+
+		if (jokalaria.dx < 0){
+			jokalaria.egoera = 5;
+		}
+		else {
+			jokalaria.egoera = 4;
+		}
+
 	}
 	else {
 
@@ -329,6 +344,21 @@ ELEMENTUA jokalariaEgoera4(ELEMENTUA jokalaria) {
 	irudiaKendu(jokalaria.Id);
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA4);
+	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
+	pantailaGarbitu();
+	irudiakMarraztu();
+	pantailaBerriztu();
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEgoera5(ELEMENTUA jokalaria) {
+
+	int Id = -1;
+
+	irudiaKendu(jokalaria.Id);
+
+	jokalaria.Id = irudiaKargatu(JOKALARIA5);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
 	pantailaGarbitu();
 	irudiakMarraztu();

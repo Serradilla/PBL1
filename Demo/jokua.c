@@ -17,6 +17,7 @@
 #include "plataformak.h"
 #include "esqueleto.h"
 #include "bizitza.h"
+#include "menu.h"
 
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
@@ -93,30 +94,35 @@ void jolastu(void) {
 	enemigo.posizioa.y = 0;
 	enemigo.dx = 0;
 	enemigo.dy = 0;
+	enemigo.mugitzen = 1;
 
 	enemigo1.Id = enemigoSortu();
 	enemigo1.posizioa.x = 100;
 	enemigo1.posizioa.y = 0;
 	enemigo1.dx = 0;
 	enemigo1.dy = 0;
+	enemigo1.mugitzen = 1;
 
 	esqueleto1.Id = esqueletoSortu();
 	esqueleto1.posizioa.x = -20;
 	esqueleto1.posizioa.y = 350;
 	esqueleto1.dy = 0;
 	esqueleto1.dx = 0;
+	esqueleto1.mugitzen = 1;
 
 	esqueleto2.Id = esqueletoSortu();
 	esqueleto2.posizioa.x = 400;
 	esqueleto2.posizioa.y = 350;
 	esqueleto2.dy = 0;
 	esqueleto2.dx = 0;
+	esqueleto2.mugitzen = 1;
 
 	esqueleto3.Id = esqueletoSortu();
 	esqueleto3.posizioa.x = 600;
 	esqueleto3.posizioa.y = 350;
 	esqueleto3.dy = 0;
 	esqueleto3.dx = 0;
+	esqueleto3.mugitzen = 1;
 
 	bizitza.Id = bizitzaSortu();
 	bizitza.posizioa.x = 50;
@@ -142,7 +148,7 @@ void jolastu(void) {
 
 	EGOERA egoera;
 	egoera = JOLASTEN;
-	enemigoKont = 6;
+	enemigoKont = 10;
 	do{
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2,esqueleto1,esqueleto2,esqueleto3);
 		//eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
@@ -160,8 +166,8 @@ void jolastu(void) {
 		//eszenarioa = mugitu(eszenarioa);
 		enemigo = mugitu(enemigo);
 		enemigo1 = mugitu(enemigo1);
-		plataforma1 = mugitu(plataforma1);
-		plataforma2 = mugitu(plataforma2);
+		//plataforma1 = mugitu(plataforma1);
+		//plataforma2 = mugitu(plataforma2);
 		sua1 = mugitu(sua1);
 		sua2 = mugitu(sua2);
 		esqueleto1 = mugitu(esqueleto1);

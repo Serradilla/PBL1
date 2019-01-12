@@ -11,6 +11,7 @@ ELEMENTUA jokalariaEgoera0(ELEMENTUA jokalaria);
 ELEMENTUA jokalariaEgoera2(ELEMENTUA jokalaria);
 ELEMENTUA jokalariaEgoera3(ELEMENTUA jokalaria);
 ELEMENTUA jokalariaEgoera4(ELEMENTUA jokalaria);
+ELEMENTUA jokalariaEgoera5(ELEMENTUA jokalaria);
 ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa);
 ELEMENTUA animatu(ELEMENTUA jokalaria);
 
