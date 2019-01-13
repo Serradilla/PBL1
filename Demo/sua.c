@@ -27,7 +27,7 @@ ELEMENTUA suaFuntzioak1(ELEMENTUA sua1, ELEMENTUA enemigo, ELEMENTUA jokalaria)
 {
 	if (suaBotata(bolarenDirekzioa1, sua1.posizioa, bolaBotata1) == 0)
 	{
-		sua1.posizioa = enemigo.posizioa;
+		sua1.posizioa = bolarenPosizioaKalkulatu(enemigo.posizioa);
 		bolarenDirekzioa1 = jokalaria.posizioa;
 		bolarenAngelua1 = bolarenAngeluaKalkulatu(jokalaria.posizioa, enemigo.posizioa);
 		if (bolaAgertuAhalDa1 == 0)
@@ -54,7 +54,7 @@ ELEMENTUA suaFuntzioak2(ELEMENTUA sua2, ELEMENTUA enemigo1, ELEMENTUA jokalaria)
 {
 	if (suaBotata(bolarenDirekzioa2, sua2.posizioa, bolaBotata2) == 0)
 	{
-		sua2.posizioa = enemigo1.posizioa;
+		sua2.posizioa = bolarenPosizioaKalkulatu(enemigo1.posizioa);
 		bolarenDirekzioa2 = jokalaria.posizioa;
 		bolarenAngelua2 = bolarenAngeluaKalkulatu(jokalaria.posizioa, enemigo1.posizioa);
 		if (bolaAgertuAhalDa2 == 0)
@@ -127,4 +127,15 @@ ELEMENTUA suaAgertu(ELEMENTUA sua)
 	pantailaBerriztu();
 
 	return sua;
+}
+
+POSIZIOA bolarenPosizioaKalkulatu(POSIZIOA posizioa)
+{
+	int eskuarenPosizioaX = 40;
+	int eskuarenPosizioaY = 50;
+
+	posizioa.x = posizioa.x + eskuarenPosizioaX;
+	posizioa.y = posizioa.y + eskuarenPosizioaY;
+
+	return posizioa;
 }
