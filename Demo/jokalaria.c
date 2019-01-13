@@ -20,7 +20,7 @@
 #define JOKALARIA4 ".\\img\\mainChar4.bmp"
 #define JOKALARIA5 ".\\img\\mainChar5.bmp"
 #define JOKALARIA6 ".\\img\\mainChar6.bmp"
-#define JOKALARIA7 ".\\img\\mainChar7.bmp"
+#define JOKALARIA7 ".\\img\\attack1.bmp"
 
 #define ESKUBIKOBORDEA 601
 #define EZKERREKOBORDEA 10
