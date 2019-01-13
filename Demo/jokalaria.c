@@ -26,7 +26,7 @@
 #define EZKERREKOBORDEA 10
 #define PLATAFORMALUZERA 170
 
-ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2,ELEMENTUA esqueleto1, ELEMENTUA esqueleto2, ELEMENTUA esqueleto3) {
+ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTUA plataforma1, ELEMENTUA plataforma2,ELEMENTUA esqueleto1, ELEMENTUA esqueleto2, ELEMENTUA esqueleto3, ELEMENTUA sua1, ELEMENTUA sua2) {
 
 	//jokalariaren lurra//
 	if ((jokalaria.posizioa.x > plataforma1.posizioa.x) && (jokalaria.posizioa.x < plataforma1.posizioa.x + PLATAFORMALUZERA) && (jokalaria.posizioa.y <= plataforma1.posizioa.y)) {
@@ -134,6 +134,8 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	jokalaria = jokalariaEtaEsqueleto(jokalaria, esqueleto1);
 	jokalaria = jokalariaEtaEsqueleto(jokalaria, esqueleto2);
 	jokalaria = jokalariaEtaEsqueleto(jokalaria, esqueleto3);
+	jokalaria = jokalariaEtaBola(jokalaria, sua1);
+	jokalaria = jokalariaEtaBola(jokalaria, sua2);
 
 
 	//------------------------//
@@ -142,7 +144,17 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 }
 
 ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto) {
-	if ((esqueleto.posizioa.x + 10 > jokalaria.posizioa.x) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10) && (jokalaria.kont3 > 70)) {
+	if ((esqueleto.posizioa.x + 10 > jokalaria.posizioa.x) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10) && (esqueleto.posizioa.y - jokalaria.posizioa.y < 50) && (jokalaria.kont3 > 70)) {
+		jokalaria.bizitza--;
+		jokalaria.kont3 = 0;
+	}
+	jokalaria.kont3++;
+
+	return jokalaria;
+}
+
+ELEMENTUA jokalariaEtaBola(ELEMENTUA jokalaria, ELEMENTUA sua) {
+	if ((sua.posizioa.x <= jokalaria.posizioa.x + 30) && (sua.posizioa.x >= jokalaria.posizioa.x) && (sua.posizioa.y >= jokalaria.posizioa.y) && (sua.posizioa.y <= jokalaria.posizioa.y + 50) && (jokalaria.kont3 > 70)) {
 		jokalaria.bizitza--;
 		jokalaria.kont3 = 0;
 	}
