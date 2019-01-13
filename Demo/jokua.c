@@ -60,6 +60,7 @@ void instrukzioakIdatzi() {
 void jolastu(void) {
 
 	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1,esqueleto2,esqueleto3,bizitza;
+	int ronda = 1;
 
 	eszenarioa.Id = eszenarioaSortu();
 	eszenarioa.posizioa.x = 0;
@@ -156,9 +157,9 @@ void jolastu(void) {
 		enemigo1 = dragoiarenFuntzioak2(enemigo1, enemigo, sua2, jokalaria);
 		sua1 = suaFuntzioak1(sua1, enemigo, jokalaria);
 		sua2 = suaFuntzioak2(sua2, enemigo1, jokalaria);
-		esqueleto1 = esqueletoFuntzioak(esqueleto1, jokalaria);
-		esqueleto2 = esqueletoFuntzioak(esqueleto2, jokalaria);
-		esqueleto3 = esqueletoFuntzioak(esqueleto3, jokalaria);
+		esqueleto1 = esqueletoFuntzioak1(esqueleto1, jokalaria);
+		esqueleto2 = esqueletoFuntzioak2(esqueleto2, jokalaria);
+		esqueleto3 = esqueletoFuntzioak3(esqueleto3, jokalaria);
 		bizitza = bizitzaFuntzioak(bizitza,jokalaria);
 
 		//------mugimenduen ejekuzioa-------//
@@ -179,7 +180,23 @@ void jolastu(void) {
 			jokalaria = salto(jokalaria);
 		}
 		//-----------------------------------//
+
+		if (enemigoKont == 0) {
+			esqueleto1.mugitzen = 1;
+			esqueleto2.mugitzen = 1;
+			esqueleto3.mugitzen = 1;
+			enemigo.mugitzen = 1;
+			enemigo1.mugitzen = 1;
+			ronda++;
+			enemigoKont = ronda * 3;
+			printf("%d ", ronda);
+			Sleep(900);
+		}
+
+		printf("%d ", enemigoKont);
+
 		Sleep(20);
+
 
 	} while (egoera == JOLASTEN);
 

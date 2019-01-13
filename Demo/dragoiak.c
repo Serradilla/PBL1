@@ -29,6 +29,9 @@
 #define ENEMIGO15 ".\\img\\dragon15.bmp"
 #define ENEMIGO16 ".\\img\\dragon16.bmp"
 
+#define DRAGOIAALTUERA 96
+#define DRAGOIALUZERA 104
+
 int heganEgingoDu1 = 1;
 int heganEgingoDu2 = 1;
 int dragoienAnimazioarenKontadorea1 = 0;
@@ -61,18 +64,18 @@ ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA 
 }
 
 ELEMENTUA dragoiaEtaJokalaria1(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
-	if (dragoia.posizioa.y >= jokalaria.posizioa.y) {
+	if (((dragoia.posizioa.x < jokalaria.posizioa.x) && (dragoia.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((dragoia.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (dragoia.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
 
 		enemigoKont--;
 
 		if (enemigoKont > 5) {
 			irudiaMugitu(dragoia.Id, -10, 350);
 			dragoia.posizioa.x = -100;
-			dragoia.posizioa.y = 350;
+			dragoia.posizioa.y = 0;
 		}
 		else {
 			irudiaMugitu(dragoia.Id, -10, 350);
-			dragoia.posizioa.x = -102;
+			dragoia.posizioa.x = -100;
 			dragoia.posizioa.y = 0;
 			dragoia.mugitzen = 0;
 		}
@@ -107,7 +110,7 @@ ELEMENTUA dragoiarenFuntzioak2(ELEMENTUA enemigo1, ELEMENTUA enemigo, ELEMENTUA 
 }
 
 ELEMENTUA dragoiaEtaJokalaria2(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
-	if (dragoia.posizioa.y >= jokalaria.posizioa.y) {
+	if (((dragoia.posizioa.x < jokalaria.posizioa.x) && (dragoia.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((dragoia.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (dragoia.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
 
 		enemigoKont--;
 

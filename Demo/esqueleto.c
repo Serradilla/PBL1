@@ -25,7 +25,7 @@ int eskeletoenAnimazioarenKontadorea = 0;
 int eskerreraAlaEskumaraJoangoDaEskeletoa = 1;
 
 
-ELEMENTUA esqueletoFuntzioak(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
+ELEMENTUA esqueletoFuntzioak1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
 		esqueleto.dx = 1;
 	}
@@ -39,13 +39,53 @@ ELEMENTUA esqueletoFuntzioak(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 
 	eskerreraAlaEskumaraJoangoDaEskeletoa = ezkerreraAlaEskumaraEskeletoa(jokalaria.posizioa, esqueleto.posizioa);
 	esqueleto = eskeletoarenAnimazioa(esqueleto);
-	esqueleto = esqueletoEtaJokalaria(esqueleto, jokalaria);
+	esqueleto = esqueletoEtaJokalaria1(esqueleto, jokalaria);
 
 
 	return esqueleto;
 }
 
-ELEMENTUA esqueletoEtaJokalaria(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
+ELEMENTUA esqueletoFuntzioak2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
+	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		esqueleto.dx = 1;
+	}
+	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		esqueleto.dx = -1;
+	}
+	else {
+		esqueleto.dx = 0;
+	}
+
+
+	eskerreraAlaEskumaraJoangoDaEskeletoa = ezkerreraAlaEskumaraEskeletoa(jokalaria.posizioa, esqueleto.posizioa);
+	esqueleto = eskeletoarenAnimazioa(esqueleto);
+	esqueleto = esqueletoEtaJokalaria2(esqueleto, jokalaria);
+
+
+	return esqueleto;
+}
+
+ELEMENTUA esqueletoFuntzioak3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
+	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		esqueleto.dx = 1;
+	}
+	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		esqueleto.dx = -1;
+	}
+	else {
+		esqueleto.dx = 0;
+	}
+
+
+	eskerreraAlaEskumaraJoangoDaEskeletoa = ezkerreraAlaEskumaraEskeletoa(jokalaria.posizioa, esqueleto.posizioa);
+	esqueleto = eskeletoarenAnimazioa(esqueleto);
+	esqueleto = esqueletoEtaJokalaria3(esqueleto, jokalaria);
+
+
+	return esqueleto;
+}
+
+ELEMENTUA esqueletoEtaJokalaria1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
 
 		enemigoKont--;
@@ -58,7 +98,53 @@ ELEMENTUA esqueletoEtaJokalaria(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 		}
 		else {
 			irudiaMugitu(esqueleto.Id, -10, 350);
-			esqueleto.posizioa.x = -102;
+			esqueleto.posizioa.x = -100;
+			esqueleto.posizioa.y = 350;
+			esqueleto.mugitzen = 0;
+		}
+
+
+	}
+	return esqueleto;
+}
+
+ELEMENTUA esqueletoEtaJokalaria2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
+	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
+
+		enemigoKont--;
+
+		if (enemigoKont > 4) {
+			irudiaMugitu(esqueleto.Id, -10, 350);
+			esqueleto.posizioa.x = -150;
+			esqueleto.posizioa.y = 350;
+			esqueleto.mugitzen = 1;
+		}
+		else {
+			irudiaMugitu(esqueleto.Id, -10, 350);
+			esqueleto.posizioa.x = -150;
+			esqueleto.posizioa.y = 350;
+			esqueleto.mugitzen = 0;
+		}
+
+
+	}
+	return esqueleto;
+}
+
+ELEMENTUA esqueletoEtaJokalaria3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
+	if (((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
+
+		enemigoKont--;
+
+		if (enemigoKont > 4) {
+			irudiaMugitu(esqueleto.Id, -10, 350);
+			esqueleto.posizioa.x = 700;
+			esqueleto.posizioa.y = 350;
+			esqueleto.mugitzen = 1;
+		}
+		else {
+			irudiaMugitu(esqueleto.Id, -10, 350);
+			esqueleto.posizioa.x = 700;
 			esqueleto.posizioa.y = 350;
 			esqueleto.mugitzen = 0;
 		}
