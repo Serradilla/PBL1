@@ -17,31 +17,59 @@
 #define SETTINGS "SETTINGS"
 #define LOGO ".\\img\\logo.bmp"
 #define COPYRIGHT "2019 - Woodwind TM"
+#define IMAGEX SCREEN_WIDTH*0.25
+#define IMAGEY (SCREEN_HEIGHT / 8)
 #define STARTX SCREEN_WIDTH*0.43
-#define STARTY SCREEN_HEIGHT / 2
+#define STARTY IMAGEY+175
 #define SETTINGSX SCREEN_WIDTH*0.40
-#define SETTINGSY SCREEN_HEIGHT*0.60
+#define SETTINGSY IMAGEY+225
 #define COPYRIGHTX SCREEN_WIDTH*0.27
-#define COPYRIGHTY SCREEN_HEIGHT*0.95
+#define COPYRIGHTY IMAGEY+385
 
-void menuText() {
-	pantailaGarbitu();
-	textuaIdatzi(STARTX, STARTY, START);
-	textuaIdatzi(SETTINGSX, SETTINGSY, SETTINGS);
-	textuaIdatzi(COPYRIGHTX, COPYRIGHTY, COPYRIGHT);
-	pantailaBerriztu();
+
+
+void animation() {
+	int tope = (SCREEN_HEIGHT / 8);
+	int anim = IMAGEY + SCREEN_HEIGHT;
+	int logoid;
+
+	logoid = menuImages(anim);
+
+	do
+	{
+		pantailaGarbitu();
+		anim -= 1;
+		irudiaMugitu(logoid, IMAGEX, anim);
+		menuText(anim);
+		arkatzKoloreaEzarri(255, 255, 255);
+		puntuaMarraztu(STARTX, STARTY+35);
+		irudiakMarraztu();
+		pantailaBerriztu();
+	} while (anim != tope);
 }
 
-void menuImages() {
-	POSIZIOA start;
-	start.x;
+void menuText(int anim) {
+
+	int starty = anim + 190;
+	int settingsy = anim + 225;
+	int copyrighty = anim + 385;
+
+
+	textuaIdatzi(STARTX, starty, START);
+	textuaIdatzi(SETTINGSX, settingsy, SETTINGS);
+	textuaIdatzi(COPYRIGHTX, copyrighty, COPYRIGHT);
+}
+
+int menuImages(int anim) {
+	int tope = SCREEN_HEIGHT / 8;
 
 	int Id = irudiaKargatu(LOGO);
-	irudiaMugitu(Id, SCREEN_WIDTH*0.23, SCREEN_HEIGHT / 8);
-	arkatzKoloreaEzarri(255, 255, 255);
-	puntuaMarraztu(STARTX - 5, STARTY + 20);
+	irudiaMugitu(Id, IMAGEX, anim);
+
 	irudiakMarraztu();
 	pantailaBerriztu();
+
+	return Id;
 }
 
 int startSakatu() {
@@ -54,15 +82,13 @@ int startSakatu() {
 	case SAGU_BOTOIA_EZKERRA:
 
 		SDL_GetMouseState(&x, &y);
-		printf("%d", y);
-		if ((x > STARTX - 5) && (x < STARTX + 85) && (y > STARTY) && (y < STARTY + 20)) sakatu = 1;
+		if ((x > STARTX - 5) && (x < STARTX + 85) && (y > STARTY + 15) && (y < STARTY + 35)) sakatu = 1;
 
 		break;
 
 	default:
 		break;
 	}
-
 
 	return sakatu;
 }

@@ -33,8 +33,7 @@ void jokoaAurkeztu(void)
 {
 	int sakatu = 0;
 
-	menuText();
-	menuImages();
+	animation();
 
 	do
 	{
