@@ -29,8 +29,12 @@
 #define ENEMIGO15 ".\\img\\dragon15.bmp"
 #define ENEMIGO16 ".\\img\\dragon16.bmp"
 
-#define DRAGOIAALTUERA 96
-#define DRAGOIALUZERA 104
+#define DRAGOIAALTUERA 30
+#define DRAGOIALUZERA 20
+
+#define JOKALARIAALTUERA 50
+#define JOKALARIALUZERA 35
+#define JOKALARIARANGO 100
 
 int heganEgingoDu1 = 1;
 int heganEgingoDu2 = 1;
@@ -64,7 +68,7 @@ ELEMENTUA dragoiarenFuntzioak1(ELEMENTUA enemigo, ELEMENTUA enemigo1, ELEMENTUA 
 }
 
 ELEMENTUA dragoiaEtaJokalaria1(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
-	if (((dragoia.posizioa.x < jokalaria.posizioa.x) && (dragoia.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((dragoia.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (dragoia.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
+	if (((jokalaria.posizioa.x > dragoia.posizioa.x + DRAGOIALUZERA) && (jokalaria.posizioa.x < dragoia.posizioa.x + DRAGOIALUZERA + JOKALARIARANGO) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((jokalaria.posizioa.x + JOKALARIALUZERA < dragoia.posizioa.x) && (jokalaria.posizioa.x + JOKALARIALUZERA > dragoia.posizioa.x - JOKALARIARANGO) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
 
 		enemigoKont--;
 
@@ -110,7 +114,7 @@ ELEMENTUA dragoiarenFuntzioak2(ELEMENTUA enemigo1, ELEMENTUA enemigo, ELEMENTUA 
 }
 
 ELEMENTUA dragoiaEtaJokalaria2(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
-	if (((dragoia.posizioa.x < jokalaria.posizioa.x) && (dragoia.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((dragoia.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (dragoia.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
+	if (((jokalaria.posizioa.x > dragoia.posizioa.x + DRAGOIALUZERA) && (jokalaria.posizioa.x < dragoia.posizioa.x + DRAGOIALUZERA + JOKALARIARANGO) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((jokalaria.posizioa.x + JOKALARIALUZERA < dragoia.posizioa.x) && (jokalaria.posizioa.x + JOKALARIALUZERA > dragoia.posizioa.x - JOKALARIARANGO) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
 
 		enemigoKont--;
 
