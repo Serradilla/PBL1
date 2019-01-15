@@ -86,7 +86,7 @@ ELEMENTUA esqueletoFuntzioak3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
+	if (((jokalaria.posizioa.x + 10 < esqueleto.posizioa.x) && (jokalaria.posizioa.x + 10 > esqueleto.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + 20) && (jokalaria.posizioa.x > esqueleto.posizioa.x) && (jokalaria.egoera == 7))) {
 
 		enemigoKont--;
 
@@ -109,7 +109,7 @@ ELEMENTUA esqueletoEtaJokalaria1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
+	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 7)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 6))) {
 
 		enemigoKont--;
 
@@ -132,7 +132,7 @@ ELEMENTUA esqueletoEtaJokalaria2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 7))) {
+	if (((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 7)) || ((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 6))) {
 
 		enemigoKont--;
 
@@ -250,9 +250,6 @@ ELEMENTUA eskeletoSortu1(ELEMENTUA esqueleto) {
 
 	esqueleto.Id = irudiaKargatu(ENEMIGO1);
 	irudiaMugitu(esqueleto.Id, esqueleto.posizioa.x, esqueleto.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return esqueleto;
 }
@@ -263,9 +260,6 @@ ELEMENTUA eskeletoSortu2(ELEMENTUA esqueleto) {
 
 	esqueleto.Id = irudiaKargatu(ENEMIGO2);
 	irudiaMugitu(esqueleto.Id, esqueleto.posizioa.x, esqueleto.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return esqueleto;
 }
@@ -276,9 +270,6 @@ ELEMENTUA eskeletoSortu3(ELEMENTUA esqueleto) {
 
 	esqueleto.Id = irudiaKargatu(ENEMIGO3);
 	irudiaMugitu(esqueleto.Id, esqueleto.posizioa.x, esqueleto.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return esqueleto;
 }
@@ -289,9 +280,6 @@ ELEMENTUA eskeletoSortu4(ELEMENTUA esqueleto) {
 
 	esqueleto.Id = irudiaKargatu(ENEMIGO4);
 	irudiaMugitu(esqueleto.Id, esqueleto.posizioa.x, esqueleto.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return esqueleto;
 }
@@ -302,9 +290,6 @@ ELEMENTUA eskeletoSortu5(ELEMENTUA esqueleto) {
 
 	esqueleto.Id = irudiaKargatu(ENEMIGO5);
 	irudiaMugitu(esqueleto.Id, esqueleto.posizioa.x, esqueleto.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return esqueleto;
 }
@@ -315,9 +300,6 @@ ELEMENTUA eskeletoSortu6(ELEMENTUA esqueleto) {
 
 	esqueleto.Id = irudiaKargatu(ENEMIGO6);
 	irudiaMugitu(esqueleto.Id, esqueleto.posizioa.x, esqueleto.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return esqueleto;
 }

@@ -23,6 +23,7 @@
 
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
+#define ESZENARIOA1 ".\\img\\escenario1.bmp"
 #define JOKALARIA ".\\img\\mainChar.bmp"
 #define ENEMIGO ".\\img\\dragon1.bmp"
 #define SUA ".\\img\\fireBall.bmp"
@@ -154,6 +155,10 @@ void demohasi(void) {
 
 		Sleep(25);
 
+		pantailaGarbitu();
+		irudiakMarraztu();
+		pantailaBerriztu();
+
 	} while (eszenarioa.posizioa.x > -(1608 - 640));
 
 	pantailaGarbitu();
@@ -163,7 +168,7 @@ void jolastu(void) {
 
 	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1, esqueleto2, esqueleto3, bizitza;
 
-	eszenarioa.Id = eszenarioaSortu();
+	eszenarioa.Id = eszenarioa1Sortu();
 	eszenarioa.posizioa.x = -(1608 - 640);
 	eszenarioa.posizioa.y = 0;
 	eszenarioa.dx = 0;
@@ -296,6 +301,9 @@ void jolastu(void) {
 			sprintf(RondaKopuru, "%d", ronda);
 		}
 
+		pantailaGarbitu();
+		irudiakMarraztu();
+
 
 		sprintf(RondaKopuru, "%d", ronda);
 		sprintf(EnemigoKopuru, "%d", enemigoKont);
@@ -303,6 +311,7 @@ void jolastu(void) {
 		textuaIdatzi(450, 50, EnemigoKopuru);
 		textuaIdatzi(50, 50, "Ronda:");
 		textuaIdatzi(100, 50, RondaKopuru);
+
 		pantailaBerriztu();
 
 
@@ -380,6 +389,18 @@ int eszenarioaSortu(void){
 	int eszenarioaId = -1;
 
 	eszenarioaId = irudiaKargatu(ESZENARIOA);
+	irudiaMugitu(eszenarioaId, 0, 0);
+	pantailaGarbitu();
+	irudiakMarraztu();
+
+	return eszenarioaId;
+}
+
+int eszenarioa1Sortu(void) {
+
+	int eszenarioaId = -1;
+
+	eszenarioaId = irudiaKargatu(ESZENARIOA1);
 	irudiaMugitu(eszenarioaId, 0, 0);
 	pantailaGarbitu();
 	irudiakMarraztu();
