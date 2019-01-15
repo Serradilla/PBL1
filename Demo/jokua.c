@@ -157,7 +157,6 @@ void demohasi(void) {
 	} while (eszenarioa.posizioa.x > -(1608 - 640));
 
 	pantailaGarbitu();
-	pantailaBerriztu();
 }
 
 void jolastu(void) {
@@ -255,7 +254,7 @@ void jolastu(void) {
 	EGOERA egoera;
 	egoera = JOLASTEN;
 	enemigoKont = 5;
-	sprintf(RondaKopuru, "%d", ronda);
+
 
 	do{
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2,esqueleto1,esqueleto2,esqueleto3, sua1, sua2);
@@ -297,13 +296,14 @@ void jolastu(void) {
 			sprintf(RondaKopuru, "%d", ronda);
 		}
 
-		sprintf(EnemigoKopuru,"%d",enemigoKont);
+
+		sprintf(RondaKopuru, "%d", ronda);
+		sprintf(EnemigoKopuru, "%d", enemigoKont);
 		textuaIdatzi(380, 50, "Enemigo:");
 		textuaIdatzi(450, 50, EnemigoKopuru);
 		textuaIdatzi(50, 50, "Ronda:");
 		textuaIdatzi(100, 50, RondaKopuru);
 		pantailaBerriztu();
-
 
 
 		Sleep(25);
@@ -417,7 +417,6 @@ ELEMENTUA mugitu(ELEMENTUA elementua) {
 	elementua.posizioa.y += elementua.dy;
 
 	irudiaMugitu(elementua.Id, elementua.posizioa.x, elementua.posizioa.y);
-	pantailaGarbitu();
 	irudiakMarraztu();
 
 	return elementua;

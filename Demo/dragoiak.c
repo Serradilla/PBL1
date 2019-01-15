@@ -34,7 +34,7 @@
 
 #define JOKALARIAALTUERA 50
 #define JOKALARIALUZERA 35
-#define JOKALARIARANGO 100
+#define JOKALARIARANGO 70
 
 int heganEgingoDu1 = 1;
 int heganEgingoDu2 = 1;
@@ -72,7 +72,7 @@ ELEMENTUA dragoiaEtaJokalaria1(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
 
 		enemigoKont--;
 
-		if (enemigoKont > 5) {
+		if (enemigoKont > 4) {
 			irudiaMugitu(dragoia.Id, -10, 350);
 			dragoia.posizioa.x = -100;
 			dragoia.posizioa.y = 0;
@@ -118,7 +118,7 @@ ELEMENTUA dragoiaEtaJokalaria2(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
 
 		enemigoKont--;
 
-		if (enemigoKont > 5) {
+		if (enemigoKont > 4) {
 			irudiaMugitu(dragoia.Id, -10, 350);
 			dragoia.posizioa.x = 800;
 			dragoia.posizioa.y = 0;
@@ -587,9 +587,6 @@ ELEMENTUA enemigoSortu1(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO1);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 	return enemigo;
 }
 
@@ -599,9 +596,6 @@ ELEMENTUA enemigoSortu2(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO2);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -612,9 +606,6 @@ ELEMENTUA enemigoSortu3(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO3);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -625,9 +616,6 @@ ELEMENTUA enemigoSortu4(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO4);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -638,9 +626,6 @@ ELEMENTUA enemigoSortu5(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO5);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -651,9 +636,6 @@ ELEMENTUA enemigoSortu6(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO6);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -664,9 +646,6 @@ ELEMENTUA enemigoSortu7(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO7);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -677,9 +656,6 @@ ELEMENTUA enemigoSortu8(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO8);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -689,9 +665,7 @@ ELEMENTUA enemigoSortu9(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO9);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
+
 	return enemigo;
 }
 
@@ -701,9 +675,6 @@ ELEMENTUA enemigoSortu10(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO10);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -714,9 +685,6 @@ ELEMENTUA enemigoSortu11(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO11);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -727,9 +695,6 @@ ELEMENTUA enemigoSortu12(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO12);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -740,9 +705,6 @@ ELEMENTUA enemigoSortu13(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO13);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -753,9 +715,6 @@ ELEMENTUA enemigoSortu14(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO14);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -766,9 +725,6 @@ ELEMENTUA enemigoSortu15(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO15);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
@@ -779,9 +735,6 @@ ELEMENTUA enemigoSortu16(ELEMENTUA enemigo) {
 
 	enemigo.Id = irudiaKargatu(ENEMIGO16);
 	irudiaMugitu(enemigo.Id, enemigo.posizioa.x, enemigo.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return enemigo;
 }
