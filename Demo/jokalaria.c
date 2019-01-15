@@ -181,7 +181,7 @@ ELEMENTUA eszenarioaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 	case TECLA_RIGHT:
 
-		if ((jokalaria.posizioa.x > ESKUBIKOBORDEA - 5) && (eszenarioa.posizioa.x > -340)) {
+		if ((jokalaria.posizioa.x > ESKUBIKOBORDEA - 5) && (eszenarioa.posizioa.x > -(1608 - 640))) {
 			eszenarioa.dx = -6;
 		}
 		else {
