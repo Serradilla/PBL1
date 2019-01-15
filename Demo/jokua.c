@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 //---------------------------------------------------------------------------------
 #include "imagen.h"
 #include "graphics.h"
@@ -8,6 +9,7 @@
 #include <SDL_mixer.h>
 #include <stdio.h>
 #include <windows.h>
+#include <string.h>
 //---------------------------------------------------------------------------------
 #include "jokua.h"
 #include "definizioak.h"
@@ -28,15 +30,11 @@
 #define BIZITZA6 ".\\img\\6heart.bmp"
 
 #define MUSIKA ".\\sound\\SirOboe.wav"
-#define MUSIKAMENU ".\\sound\\Menu.wav"
 
 void jokoaAurkeztu(void)
 {
 	int sakatu = 0;
 
-	audioInit();
-	loadTheMusic(MUSIKAMENU);
-	playMusic();
 	animation();
 
 	do
@@ -62,7 +60,6 @@ void instrukzioakIdatzi() {
 
 void demohasi(void) {
 
-<<<<<<< HEAD
 	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1, esqueleto2, esqueleto3, bizitza;
 
 	plataforma1.posizioa.x = 90000;
@@ -119,16 +116,6 @@ void demohasi(void) {
 	bizitza.posizioa.y = 20;
 	bizitza.dy = 0;
 	bizitza.dx = 0;
-=======
-	toggleMusic();
-
-	Sleep(2000);
-	loadTheMusic(MUSIKA);
-	playMusic();
-
-	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1,esqueleto2,esqueleto3,bizitza;
-	int ronda = 1;
->>>>>>> master
 
 	eszenarioa.Id = eszenarioaSortu();
 	eszenarioa.posizioa.x = 0;
@@ -165,7 +152,7 @@ void demohasi(void) {
 			jokalaria = salto(jokalaria);
 		}
 
-		Sleep(20);
+		Sleep(25);
 
 	} while (eszenarioa.posizioa.x > -(1608 - 640));
 
@@ -258,7 +245,6 @@ void jolastu(void) {
 	jokalaria.kont3 = 0;
 	jokalaria.bizitza = 6;
 
-<<<<<<< HEAD
 	audioInit();
 	loadTheMusic(MUSIKA);
 	playMusic();
@@ -266,11 +252,11 @@ void jolastu(void) {
 	int ronda = 1;
 	char RondaKopuru[1];
 	char EnemigoKopuru[1];
-=======
->>>>>>> master
 	EGOERA egoera;
 	egoera = JOLASTEN;
 	enemigoKont = 5;
+	sprintf(RondaKopuru, "%d", ronda);
+
 	do{
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2,esqueleto1,esqueleto2,esqueleto3, sua1, sua2);
 		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);
@@ -297,7 +283,6 @@ void jolastu(void) {
 			jokalaria = salto(jokalaria);
 		}
 		//-----------------------------------//
-
 		
 
 		if (enemigoKont == 0) {
@@ -307,14 +292,21 @@ void jolastu(void) {
 			enemigo.mugitzen = 1;
 			enemigo1.mugitzen = 1;
 			ronda++;
-			enemigoKont = ronda * 3;
-			printf("%d ", ronda);
+			enemigoKont = ronda * 2 + 2;
 			Sleep(1000);
+			sprintf(RondaKopuru, "%d", ronda);
 		}
 
-		printf("%d ", enemigoKont);
+		sprintf(EnemigoKopuru,"%d",enemigoKont);
+		textuaIdatzi(380, 50, "Enemigo:");
+		textuaIdatzi(450, 50, EnemigoKopuru);
+		textuaIdatzi(50, 50, "Ronda:");
+		textuaIdatzi(100, 50, RondaKopuru);
+		pantailaBerriztu();
 
-		Sleep(20);
+
+
+		Sleep(25);
 
 
 	} while (egoera == JOLASTEN);
@@ -329,7 +321,6 @@ int bizitzaSortu(void) {
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
@@ -342,7 +333,6 @@ int jokalariaSortu(void){
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
@@ -355,7 +345,6 @@ int esqueletoSortu() {
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
@@ -368,7 +357,6 @@ int enemigoSortu(void) {
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
@@ -381,7 +369,6 @@ int enemigo1Sortu(void) {
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
@@ -396,7 +383,6 @@ int eszenarioaSortu(void){
 	irudiaMugitu(eszenarioaId, 0, 0);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return eszenarioaId;
 }
@@ -409,7 +395,6 @@ int sua1Sortu(void) {
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
@@ -422,21 +407,18 @@ int sua2Sortu(void) {
 	irudiaMugitu(Id, 0, 400);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return Id;
 }
 
 ELEMENTUA mugitu(ELEMENTUA elementua) {
 
-		
 	elementua.posizioa.x += elementua.dx;
 	elementua.posizioa.y += elementua.dy;
 
 	irudiaMugitu(elementua.Id, elementua.posizioa.x, elementua.posizioa.y);
 	pantailaGarbitu();
 	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return elementua;
 }
