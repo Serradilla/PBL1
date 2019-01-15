@@ -441,7 +441,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 3 && erasoarenKontadorea < 6)
+	if (erasoarenKontadorea >= 4 && erasoarenKontadorea < 8)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -452,7 +452,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 6 && erasoarenKontadorea < 9)
+	if (erasoarenKontadorea >= 8 && erasoarenKontadorea < 12)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -463,7 +463,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 9 && erasoarenKontadorea < 12)
+	if (erasoarenKontadorea >= 12 && erasoarenKontadorea < 16)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -474,7 +474,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 12 && erasoarenKontadorea < 16)
+	if (erasoarenKontadorea >= 16 && erasoarenKontadorea < 20)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -485,7 +485,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea == 16)
+	if (erasoarenKontadorea == 20)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -494,6 +494,8 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		pantailaGarbitu();
 		irudiakMarraztu();
 		pantailaBerriztu();
+
+		erasoarenKontadorea = 0;
 	}
 
 	return jokalaria;
@@ -511,7 +513,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 3 && erasoarenKontadorea < 6)
+	if (erasoarenKontadorea >= 4 && erasoarenKontadorea < 8)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -522,7 +524,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 6 && erasoarenKontadorea < 9)
+	if (erasoarenKontadorea >= 8 && erasoarenKontadorea < 12)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -533,7 +535,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 9 && erasoarenKontadorea < 12)
+	if (erasoarenKontadorea >= 12 && erasoarenKontadorea < 16)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -544,7 +546,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea >= 12 && erasoarenKontadorea < 16)
+	if (erasoarenKontadorea >= 16 && erasoarenKontadorea < 20)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -555,7 +557,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		irudiakMarraztu();
 		pantailaBerriztu();
 	}
-	if (erasoarenKontadorea == 16)
+	if (erasoarenKontadorea == 20)
 	{
 		irudiaKendu(jokalaria.Id);
 
@@ -564,6 +566,8 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		pantailaGarbitu();
 		irudiakMarraztu();
 		pantailaBerriztu();
+
+		erasoarenKontadorea = 0;
 	}
 
 	return jokalaria;

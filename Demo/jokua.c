@@ -28,11 +28,15 @@
 #define BIZITZA6 ".\\img\\6heart.bmp"
 
 #define MUSIKA ".\\sound\\SirOboe.wav"
+#define MUSIKAMENU ".\\sound\\Menu.wav"
 
 void jokoaAurkeztu(void)
 {
 	int sakatu = 0;
 
+	audioInit();
+	loadTheMusic(MUSIKAMENU);
+	playMusic();
 	animation();
 
 	do
@@ -58,6 +62,7 @@ void instrukzioakIdatzi() {
 
 void demohasi(void) {
 
+<<<<<<< HEAD
 	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1, esqueleto2, esqueleto3, bizitza;
 
 	plataforma1.posizioa.x = 90000;
@@ -114,6 +119,16 @@ void demohasi(void) {
 	bizitza.posizioa.y = 20;
 	bizitza.dy = 0;
 	bizitza.dx = 0;
+=======
+	toggleMusic();
+
+	Sleep(2000);
+	loadTheMusic(MUSIKA);
+	playMusic();
+
+	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1,esqueleto2,esqueleto3,bizitza;
+	int ronda = 1;
+>>>>>>> master
 
 	eszenarioa.Id = eszenarioaSortu();
 	eszenarioa.posizioa.x = 0;
@@ -243,6 +258,7 @@ void jolastu(void) {
 	jokalaria.kont3 = 0;
 	jokalaria.bizitza = 6;
 
+<<<<<<< HEAD
 	audioInit();
 	loadTheMusic(MUSIKA);
 	playMusic();
@@ -250,6 +266,8 @@ void jolastu(void) {
 	int ronda = 1;
 	char RondaKopuru[1];
 	char EnemigoKopuru[1];
+=======
+>>>>>>> master
 	EGOERA egoera;
 	egoera = JOLASTEN;
 	enemigoKont = 5;
