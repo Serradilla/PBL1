@@ -17,6 +17,7 @@ int sua2Sortu(void);
 int esqueletoSortu(void);
 ELEMENTUA mugitu(ELEMENTUA elementua);
 int bizitzaSortu(void);
+void demohasi(void);
 
 int enemigoKont;
 

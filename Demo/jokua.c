@@ -56,13 +56,114 @@ void instrukzioakIdatzi() {
 	pantailaBerriztu();
 }
 
-void jolastu(void) {
+void demohasi(void) {
 
-	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1,esqueleto2,esqueleto3,bizitza;
-	int ronda = 1;
+	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1, esqueleto2, esqueleto3, bizitza;
+
+	plataforma1.posizioa.x = 90000;
+	plataforma1.posizioa.y = 123;
+	plataforma1.dx = 0;
+	plataforma1.dy = 0;
+
+	plataforma2.posizioa.x = 1111;
+	plataforma2.posizioa.y = 123;
+	plataforma2.dx = 0;
+	plataforma2.dy = 0;
+
+	sua1.posizioa.x = 9000;
+	sua1.posizioa.y = 0;
+	sua1.dx = 0;
+	sua1.dy = 0;
+
+	sua2.posizioa.x = 9000;
+	sua2.posizioa.y = 0;
+	sua2.dx = 0;
+	sua2.dy = 0;
+
+	enemigo.posizioa.x = 9000;
+	enemigo.posizioa.y = 0;
+	enemigo.dx = 0;
+	enemigo.dy = 0;
+	enemigo.mugitzen = 0;
+
+	enemigo1.posizioa.x = 9000;
+	enemigo1.posizioa.y = 0;
+	enemigo1.dx = 0;
+	enemigo1.dy = 0;
+	enemigo1.mugitzen = 0;
+
+	esqueleto1.posizioa.x = -9000;
+	esqueleto1.posizioa.y = 350;
+	esqueleto1.dy = 0;
+	esqueleto1.dx = 0;
+	esqueleto1.mugitzen = 0;
+
+	esqueleto2.posizioa.x = 9000;
+	esqueleto2.posizioa.y = 350;
+	esqueleto2.dy = 0;
+	esqueleto2.dx = 0;
+	esqueleto2.mugitzen = 0;
+
+	esqueleto3.posizioa.x = 9000;
+	esqueleto3.posizioa.y = 350;
+	esqueleto3.dy = 0;
+	esqueleto3.dx = 0;
+	esqueleto3.mugitzen = 0;
+
+	bizitza.posizioa.x = 50;
+	bizitza.posizioa.y = 20;
+	bizitza.dy = 0;
+	bizitza.dx = 0;
 
 	eszenarioa.Id = eszenarioaSortu();
 	eszenarioa.posizioa.x = 0;
+	eszenarioa.posizioa.y = 0;
+	eszenarioa.dx = 0;
+	eszenarioa.dy = 0;
+
+	jokalaria.Id = jokalariaSortu();
+	jokalaria.posizioa.x = 50;
+	jokalaria.posizioa.y = 350;
+	jokalaria.dx = 0;
+	jokalaria.dy = 0;
+	jokalaria.saltatzen = 0;
+	jokalaria.kont = 0;
+	jokalaria.lurra = 350;
+	jokalaria.kont2 = 0;
+	jokalaria.kont3 = 0;
+	jokalaria.bizitza = 6;
+
+	do {
+
+		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2, esqueleto1, esqueleto2, esqueleto3, sua1, sua2);
+		eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
+
+		//------mugimenduen ejekuzioa-------//
+		jokalaria = mugitu(jokalaria);
+		eszenarioa = mugitu(eszenarioa);
+		enemigo = mugitu(enemigo);
+		enemigo1 = mugitu(enemigo1);
+		sua1 = mugitu(sua1);
+		sua2 = mugitu(sua2);
+
+		if (jokalaria.saltatzen == 1) {
+			jokalaria = salto(jokalaria);
+		}
+
+		Sleep(20);
+
+	} while (eszenarioa.posizioa.x > -(1608 - 640));
+
+	pantailaGarbitu();
+	pantailaBerriztu();
+}
+
+void jolastu(void) {
+
+	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1, esqueleto2, esqueleto3, bizitza;
+
+	eszenarioa.Id = eszenarioaSortu();
+	eszenarioa.posizioa.x = -(1608 - 640);
 	eszenarioa.posizioa.y = 0;
 	eszenarioa.dx = 0;
 	eszenarioa.dy = 0;
@@ -146,12 +247,14 @@ void jolastu(void) {
 	loadTheMusic(MUSIKA);
 	playMusic();
 
+	int ronda = 1;
+	char RondaKopuru[1];
+	char EnemigoKopuru[1];
 	EGOERA egoera;
 	egoera = JOLASTEN;
-	enemigoKont = 10;
+	enemigoKont = 5;
 	do{
 		jokalaria = jokalariaFuntzioak(jokalaria, eszenarioa, plataforma1, plataforma2,esqueleto1,esqueleto2,esqueleto3, sua1, sua2);
-		//eszenarioa = eszenarioaFuntzioak(jokalaria, eszenarioa);
 		enemigo = dragoiarenFuntzioak1(enemigo, enemigo1, sua1, jokalaria);
 		enemigo1 = dragoiarenFuntzioak2(enemigo1, enemigo, sua2, jokalaria);
 		sua1 = suaFuntzioak1(sua1, enemigo, jokalaria);
@@ -163,11 +266,8 @@ void jolastu(void) {
 
 		//------mugimenduen ejekuzioa-------//
 		jokalaria = mugitu(jokalaria);
-		//eszenarioa = mugitu(eszenarioa);
 		enemigo = mugitu(enemigo);
 		enemigo1 = mugitu(enemigo1);
-		//plataforma1 = mugitu(plataforma1);
-		//plataforma2 = mugitu(plataforma2);
 		sua1 = mugitu(sua1);
 		sua2 = mugitu(sua2);
 		esqueleto1 = mugitu(esqueleto1);
@@ -180,6 +280,8 @@ void jolastu(void) {
 		}
 		//-----------------------------------//
 
+		
+
 		if (enemigoKont == 0) {
 			esqueleto1.mugitzen = 1;
 			esqueleto2.mugitzen = 1;
@@ -189,7 +291,7 @@ void jolastu(void) {
 			ronda++;
 			enemigoKont = ronda * 3;
 			printf("%d ", ronda);
-			Sleep(900);
+			Sleep(1000);
 		}
 
 		printf("%d ", enemigoKont);

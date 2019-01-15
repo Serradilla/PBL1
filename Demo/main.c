@@ -20,7 +20,10 @@ int main(int argc, char * str[]) {
 		return 1;
 	}
 	textuaGaitu();
+
 	jokoaAurkeztu();
+
+	demohasi();
 
 	jolastu();
 
