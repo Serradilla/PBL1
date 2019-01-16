@@ -29,8 +29,8 @@
 #define ENEMIGO15 ".\\img\\dragon15.bmp"
 #define ENEMIGO16 ".\\img\\dragon16.bmp"
 
-#define DRAGOIAALTUERA 30
-#define DRAGOIALUZERA 20
+#define DRAGOIAALTUERA 50
+#define DRAGOIALUZERA 30
 
 #define JOKALARIAALTUERA 50
 #define JOKALARIALUZERA 35

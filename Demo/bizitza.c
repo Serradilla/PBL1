@@ -80,9 +80,6 @@ ELEMENTUA Egoera0(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA0);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }
@@ -94,9 +91,6 @@ ELEMENTUA Egoera1(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA1);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }
@@ -108,9 +102,6 @@ ELEMENTUA Egoera2(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA2);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }
@@ -122,9 +113,6 @@ ELEMENTUA Egoera3(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA3);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }
@@ -136,9 +124,6 @@ ELEMENTUA Egoera4(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA4);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }
@@ -150,9 +135,6 @@ ELEMENTUA Egoera5(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA5);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }
@@ -164,9 +146,6 @@ ELEMENTUA Egoera6(ELEMENTUA bizitza) {
 	irudiaKendu(bizitza.Id);
 	bizitza.Id = irudiaKargatu(BIZITZA6);
 	irudiaMugitu(bizitza.Id, bizitza.posizioa.x, bizitza.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return bizitza;
 }

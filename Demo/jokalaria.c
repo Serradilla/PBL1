@@ -346,9 +346,6 @@ ELEMENTUA jokalariaEgoera0(ELEMENTUA jokalaria) {
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return jokalaria;
 }
@@ -361,9 +358,6 @@ ELEMENTUA jokalariaEgoera1(ELEMENTUA jokalaria) {
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA1);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return jokalaria;
 }
@@ -376,9 +370,6 @@ ELEMENTUA jokalariaEgoera2(ELEMENTUA jokalaria) {
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA2);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return jokalaria;
 }
@@ -391,9 +382,6 @@ ELEMENTUA jokalariaEgoera3(ELEMENTUA jokalaria) {
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA3);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return jokalaria;
 }
@@ -406,9 +394,6 @@ ELEMENTUA jokalariaEgoera4(ELEMENTUA jokalaria) {
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA4);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return jokalaria;
 }
@@ -421,9 +406,6 @@ ELEMENTUA jokalariaEgoera5(ELEMENTUA jokalaria) {
 
 	jokalaria.Id = irudiaKargatu(JOKALARIA5);
 	irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-	pantailaGarbitu();
-	irudiakMarraztu();
-	pantailaBerriztu();
 
 	return jokalaria;
 }
@@ -437,9 +419,6 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO1);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
 	}
 	if (erasoarenKontadorea >= 4 && erasoarenKontadorea < 8)
 	{
@@ -448,9 +427,6 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO2);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
 	}
 	if (erasoarenKontadorea >= 8 && erasoarenKontadorea < 12)
 	{
@@ -459,9 +435,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO3);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea >= 12 && erasoarenKontadorea < 16)
 	{
@@ -470,9 +444,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO4);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea >= 16 && erasoarenKontadorea < 20)
 	{
@@ -481,9 +453,7 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO5);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea == 20)
 	{
@@ -491,9 +461,6 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 
 		jokalaria.Id = irudiaKargatu(JOKALARIA1);
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
 
 		erasoarenKontadorea = 0;
 	}
@@ -509,9 +476,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO6);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea >= 4 && erasoarenKontadorea < 8)
 	{
@@ -520,9 +485,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO7);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea >= 8 && erasoarenKontadorea < 12)
 	{
@@ -531,9 +494,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO8);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea >= 12 && erasoarenKontadorea < 16)
 	{
@@ -542,9 +503,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO9);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea >= 16 && erasoarenKontadorea < 20)
 	{
@@ -553,9 +512,7 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 		jokalaria.Id = irudiaKargatu(ERASO10);
 		erasoarenKontadorea++;
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
+
 	}
 	if (erasoarenKontadorea == 20)
 	{
@@ -563,9 +520,6 @@ ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 
 		jokalaria.Id = irudiaKargatu(JOKALARIA3);
 		irudiaMugitu(jokalaria.Id, jokalaria.posizioa.x, jokalaria.posizioa.y);
-		pantailaGarbitu();
-		irudiakMarraztu();
-		pantailaBerriztu();
 
 		erasoarenKontadorea = 0;
 	}

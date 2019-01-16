@@ -301,12 +301,12 @@ void jolastu(void) {
 			sprintf(RondaKopuru, "%d", ronda);
 		}
 
+		sprintf(RondaKopuru, "%d", ronda);
+		sprintf(EnemigoKopuru, "%d", enemigoKont);
+
 		pantailaGarbitu();
 		irudiakMarraztu();
 
-
-		sprintf(RondaKopuru, "%d", ronda);
-		sprintf(EnemigoKopuru, "%d", enemigoKont);
 		textuaIdatzi(380, 50, "Enemigo:");
 		textuaIdatzi(450, 50, EnemigoKopuru);
 		textuaIdatzi(50, 50, "Ronda:");
@@ -328,8 +328,7 @@ int bizitzaSortu(void) {
 
 	Id = irudiaKargatu(BIZITZA6);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return Id;
 }
@@ -340,8 +339,7 @@ int jokalariaSortu(void){
 
 	Id = irudiaKargatu(JOKALARIA);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return Id;
 }
@@ -352,8 +350,7 @@ int esqueletoSortu() {
 
 	Id = irudiaKargatu(ESQUELETO);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return Id;
 }
@@ -364,8 +361,7 @@ int enemigoSortu(void) {
 
 	Id = irudiaKargatu(ENEMIGO);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return Id;
 }
@@ -376,8 +372,7 @@ int enemigo1Sortu(void) {
 
 	Id = irudiaKargatu(ENEMIGO);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return Id;
 }
@@ -390,8 +385,7 @@ int eszenarioaSortu(void){
 
 	eszenarioaId = irudiaKargatu(ESZENARIOA);
 	irudiaMugitu(eszenarioaId, 0, 0);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return eszenarioaId;
 }
@@ -402,8 +396,7 @@ int eszenarioa1Sortu(void) {
 
 	eszenarioaId = irudiaKargatu(ESZENARIOA1);
 	irudiaMugitu(eszenarioaId, 0, 0);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return eszenarioaId;
 }
@@ -414,8 +407,7 @@ int sua1Sortu(void) {
 
 	Id = irudiaKargatu(SUA);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
+
 
 	return Id;
 }
@@ -426,8 +418,6 @@ int sua2Sortu(void) {
 
 	Id = irudiaKargatu(SUA);
 	irudiaMugitu(Id, 0, 400);
-	pantailaGarbitu();
-	irudiakMarraztu();
 
 	return Id;
 }

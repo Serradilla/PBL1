@@ -17,6 +17,5 @@ ELEMENTUA suaFuntzioak2(ELEMENTUA sua2, ELEMENTUA enemigo1, ELEMENTUA jokalaria)
 ELEMENTUA suaFuntzioak1(ELEMENTUA sua1, ELEMENTUA enemigo, ELEMENTUA jokalaria);
 double bolarenAngeluaKalkulatu(POSIZIOA posizioa1, POSIZIOA posizioa2);
 ELEMENTUA suaAgertu(ELEMENTUA sua);
-POSIZIOA bolarenPosizioaKalkulatu(POSIZIOA posizioa);
 
 #endif
