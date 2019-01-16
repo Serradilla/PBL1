@@ -9,6 +9,7 @@ void instrukzioakIdatzi();
 void jolastu(void);
 int jokalariaSortu(void);
 int eszenarioaSortu(void);
+int eszenarioa1Sortu(void);
 int enemigoSortu(void);
 int enemigo1Sortu(void);
 int plataformaSortu(void);

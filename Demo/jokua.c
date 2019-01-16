@@ -316,9 +316,9 @@ void jolastu(void) {
 
 		Sleep(25);
 
-		if (jokalaria.bizitza == 0) {
-			egoera = GALDU;
-		}
+		//if (jokalaria.bizitza == 0) {
+		//	egoera = GALDU;
+		//}
 
 	} while (egoera == JOLASTEN);
 
