@@ -238,7 +238,7 @@ void jolastu(void) {
 	bizitza.dx = 0;
 
 	jokalaria.Id = jokalariaSortu();
-	jokalaria.posizioa.x = 50;
+	jokalaria.posizioa.x = 600;
 	jokalaria.posizioa.y = 350;
 	jokalaria.dx = 0;
 	jokalaria.dy = 0;
@@ -254,8 +254,8 @@ void jolastu(void) {
 	playMusic();
 
 	int ronda = 1;
-	char RondaKopuru[1];
-	char EnemigoKopuru[1];
+	char RondaKopuru[7];
+	char EnemigoKopuru[7];
 	EGOERA egoera;
 	egoera = JOLASTEN;
 	enemigoKont = 5;
@@ -289,7 +289,7 @@ void jolastu(void) {
 		//-----------------------------------//
 		
 
-		if (enemigoKont == 0) {
+		if ((enemigoKont == 0) && (jokalaria.posizioa.y == jokalaria.lurra)) {
 			esqueleto1.mugitzen = 1;
 			esqueleto2.mugitzen = 1;
 			esqueleto3.mugitzen = 1;
@@ -307,19 +307,23 @@ void jolastu(void) {
 		pantailaGarbitu();
 		irudiakMarraztu();
 
-		textuaIdatzi(380, 50, "Enemigo:");
-		textuaIdatzi(450, 50, EnemigoKopuru);
+		textuaIdatzi(430, 50, "Enemigo:");
+		textuaIdatzi(560, 50, EnemigoKopuru);
 		textuaIdatzi(50, 50, "Ronda:");
-		textuaIdatzi(100, 50, RondaKopuru);
+		textuaIdatzi(150, 50, RondaKopuru);
 
 		pantailaBerriztu();
 
-
 		Sleep(25);
 
+		if (jokalaria.bizitza == 0) {
+			egoera = GALDU;
+		}
 
 	} while (egoera == JOLASTEN);
 
+	pantailaGarbitu();
+	pantailaBerriztu();
 }
 
 int bizitzaSortu(void) {
