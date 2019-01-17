@@ -10,9 +10,10 @@
 #include <stdio.h>
 #include "jokua.h"
 #include "SDL.h"
+#include "death.h"
 
 int main(int argc, char * str[]) {
-	int jarraitu = 0;
+	int jarraitu = 0, sakatu;
 
 	if (sgHasieratu() == -1)
 	{
@@ -23,9 +24,16 @@ int main(int argc, char * str[]) {
 
 	jokoaAurkeztu();
 
-	demohasi();
+	//demohasi();
 
-	jolastu();
+	//jolastu();
+
+	deathScreen();
+
+	do
+	{
+		sakatu = startSakatu();
+	} while (sakatu == 0);
 
 	do
 	{

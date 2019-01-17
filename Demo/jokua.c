@@ -20,6 +20,7 @@
 #include "esqueleto.h"
 #include "bizitza.h"
 #include "menu.h"
+#include "death.h"
 
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
@@ -161,6 +162,7 @@ void demohasi(void) {
 
 	} while (eszenarioa.posizioa.x > -(1608 - 640));
 
+	irudiaKendu(jokalaria.Id);
 	pantailaGarbitu();
 }
 
@@ -318,6 +320,16 @@ void jolastu(void) {
 
 		if (jokalaria.bizitza == 0) {
 			egoera = GALDU;
+			irudiaKendu(eszenarioa.Id);
+			irudiaKendu(jokalaria.Id);
+			irudiaKendu(esqueleto1.Id);
+			irudiaKendu(esqueleto2.Id);
+			irudiaKendu(esqueleto3.Id);
+			irudiaKendu(sua1.Id);
+			irudiaKendu(sua2.Id);
+			irudiaKendu(enemigo.Id);
+			irudiaKendu(enemigo1.Id);
+			irudiaKendu(bizitza.Id);
 		}
 
 	} while (egoera == JOLASTEN);
