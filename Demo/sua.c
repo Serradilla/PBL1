@@ -5,6 +5,7 @@
 #include "text.h"
 #include "soinua.h"
 #include "sua.h"
+#include "jokua.h"
 
 #include <stdio.h>
 #include <windows.h>
@@ -27,7 +28,7 @@ ELEMENTUA suaFuntzioak1(ELEMENTUA sua1, ELEMENTUA enemigo, ELEMENTUA jokalaria)
 {
 	if (suaBotata(bolarenDirekzioa1, sua1.posizioa, bolaBotata1) == 0)
 	{
-		sua1.posizioa = enemigo.posizioa;
+		sua1.posizioa = bolaAgertuEskuan(enemigo.posizioa);
 		bolarenDirekzioa1 = jokalaria.posizioa;
 		bolarenAngelua1 = bolarenAngeluaKalkulatu(jokalaria.posizioa, enemigo.posizioa);
 		if (bolaAgertuAhalDa1 == 0)
@@ -42,6 +43,7 @@ ELEMENTUA suaFuntzioak1(ELEMENTUA sua1, ELEMENTUA enemigo, ELEMENTUA jokalaria)
 		{
 			sua1.Id = irudiaKargatu(SUA);
 			bolaAgertuAhalDa1 = 0;
+			playSound(dragoiaSuaBota.Id);
 		}
 		sua1 = suaAgertu(sua1);
 		sua1.posizioa = jarraituBola(bolarenDirekzioa1, sua1.posizioa, bolarenAngelua1);
@@ -54,7 +56,7 @@ ELEMENTUA suaFuntzioak2(ELEMENTUA sua2, ELEMENTUA enemigo1, ELEMENTUA jokalaria)
 {
 	if (suaBotata(bolarenDirekzioa2, sua2.posizioa, bolaBotata2) == 0)
 	{
-		sua2.posizioa = enemigo1.posizioa;
+		sua2.posizioa = bolaAgertuEskuan(enemigo1.posizioa);
 		bolarenDirekzioa2 = jokalaria.posizioa;
 		bolarenAngelua2 = bolarenAngeluaKalkulatu(jokalaria.posizioa, enemigo1.posizioa);
 		if (bolaAgertuAhalDa2 == 0)
@@ -69,6 +71,7 @@ ELEMENTUA suaFuntzioak2(ELEMENTUA sua2, ELEMENTUA enemigo1, ELEMENTUA jokalaria)
 		{
 			sua2.Id = irudiaKargatu(SUA);
 			bolaAgertuAhalDa2 = 0;
+			playSound(dragoiaSuaBota.Id);
 		}
 		sua2 = suaAgertu(sua2);
 		sua2.posizioa = jarraituBola(bolarenDirekzioa2, sua2.posizioa, bolarenAngelua2);
@@ -124,4 +127,12 @@ ELEMENTUA suaAgertu(ELEMENTUA sua)
 	irudiaMugitu(sua.Id, sua.posizioa.x, sua.posizioa.y);
 
 	return sua;
+}
+
+POSIZIOA bolaAgertuEskuan(POSIZIOA posizioa)
+{
+	posizioa.x += 45;
+	posizioa.y += 55;
+
+	return posizioa;
 }

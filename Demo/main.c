@@ -24,9 +24,9 @@ int main(int argc, char * str[]) {
 
 	jokoaAurkeztu();
 
-	//demohasi();
+	demohasi();
 
-	//jolastu();
+	jolastu();
 
 	deathScreen();
 

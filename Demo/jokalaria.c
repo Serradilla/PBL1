@@ -412,6 +412,10 @@ ELEMENTUA jokalariaEgoera5(ELEMENTUA jokalaria) {
 
 ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 
+	if (erasoarenKontadorea == 0)
+	{
+		playSound(mainCharAtakeSoinua.Id);
+	}
 	if (erasoarenKontadorea >= 0 && erasoarenKontadorea < 4)
 	{
 		irudiaKendu(jokalaria.Id);
@@ -469,6 +473,10 @@ ELEMENTUA erasoEgoera1(ELEMENTUA jokalaria) {
 }
 ELEMENTUA erasoEgoera2(ELEMENTUA jokalaria) {
 
+	if (erasoarenKontadorea == 0)
+	{
+		playSound(mainCharAtakeSoinua.Id);
+	}
 	if (erasoarenKontadorea >= 0 && erasoarenKontadorea < 4)
 	{
 		irudiaKendu(jokalaria.Id);

@@ -32,11 +32,23 @@
 #define BIZITZA6 ".\\img\\6heart.bmp"
 
 #define MUSIKA ".\\sound\\SirOboe.wav"
+#define MUSIKAMENU ".\\sound\\Menu.wav"
+#define MENUTRANTSIZIOA ".\\sound\\TransitionMenu.wav"
+#define ATAKESOINUA ".\\sound\\MainCharSlash.wav"
+#define JOTZENSOINUA ".\\sound\\MainCharSlashHits.wav"
+#define SUABOTA ".\\sound\\DragonShoot.wav"
+
+
+ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, dragoiaSuaBota;
 
 void jokoaAurkeztu(void)
 {
 	int sakatu = 0;
 
+	audioInit();
+	loadTheMusic(MUSIKAMENU);
+	playMusic();
+	
 	animation();
 
 	do
@@ -61,6 +73,16 @@ void instrukzioakIdatzi() {
 }
 
 void demohasi(void) {
+
+	musikaMenu.Id = loadSound(MENUTRANTSIZIOA);
+	mainCharAtakeSoinua.Id = loadSound(ATAKESOINUA);
+	mainCharJotzenSoinua.Id = loadSound(JOTZENSOINUA);
+	dragoiaSuaBota.Id = loadSound(SUABOTA);
+
+	musicUnload();
+	playSound(musikaMenu.Id);
+
+	Sleep(2000);
 
 	ELEMENTUA jokalaria, eszenarioa, enemigo, enemigo1, plataforma1, plataforma2, sua1, sua2, esqueleto1, esqueleto2, esqueleto3, bizitza;
 

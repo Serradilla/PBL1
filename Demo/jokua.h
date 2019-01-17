@@ -3,6 +3,8 @@
 
 #include "definizioak.h"
 
+ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, dragoiaSuaBota;
+
 void jokoaAurkeztu(void);
 void sarreraMezuaIdatzi();
 void instrukzioakIdatzi();

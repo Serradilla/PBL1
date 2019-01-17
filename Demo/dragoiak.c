@@ -71,6 +71,7 @@ ELEMENTUA dragoiaEtaJokalaria1(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
 	if (((jokalaria.posizioa.x > dragoia.posizioa.x + DRAGOIALUZERA) && (jokalaria.posizioa.x < dragoia.posizioa.x + DRAGOIALUZERA + JOKALARIARANGO) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((jokalaria.posizioa.x + JOKALARIALUZERA < dragoia.posizioa.x) && (jokalaria.posizioa.x + JOKALARIALUZERA > dragoia.posizioa.x - JOKALARIARANGO) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
 
 		enemigoKont--;
+		playSound(mainCharJotzenSoinua.Id);
 
 		if (enemigoKont > 4) {
 			irudiaMugitu(dragoia.Id, -10, 350);
@@ -117,6 +118,7 @@ ELEMENTUA dragoiaEtaJokalaria2(ELEMENTUA dragoia, ELEMENTUA jokalaria) {
 	if (((jokalaria.posizioa.x > dragoia.posizioa.x + DRAGOIALUZERA) && (jokalaria.posizioa.x < dragoia.posizioa.x + DRAGOIALUZERA + JOKALARIARANGO) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA)) || ((jokalaria.posizioa.x + JOKALARIALUZERA < dragoia.posizioa.x) && (jokalaria.posizioa.x + JOKALARIALUZERA > dragoia.posizioa.x - JOKALARIARANGO) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y > dragoia.posizioa.y) && (jokalaria.posizioa.y < dragoia.posizioa.y + DRAGOIAALTUERA))) {
 
 		enemigoKont--;
+		playSound(mainCharJotzenSoinua.Id);
 
 		if (enemigoKont > 4) {
 			irudiaMugitu(dragoia.Id, -10, 350);
