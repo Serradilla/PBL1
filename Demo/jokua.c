@@ -20,6 +20,7 @@
 #include "esqueleto.h"
 #include "bizitza.h"
 #include "menu.h"
+#include "death.h"
 
 #define ONGI_ETORRI_MEZUA "ONGI ETORRI SAKATU RETURN BOTOIA JOKUA HASTEKO"
 #define ESZENARIOA ".\\img\\escenario.bmp"
@@ -161,6 +162,7 @@ void demohasi(void) {
 
 	} while (eszenarioa.posizioa.x > -(1608 - 640));
 
+	irudiaKendu(jokalaria.Id);
 	pantailaGarbitu();
 }
 

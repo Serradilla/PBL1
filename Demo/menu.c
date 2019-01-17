@@ -24,7 +24,7 @@
 #define SETTINGSX SCREEN_WIDTH*0.40
 #define SETTINGSY IMAGEY+225
 #define COPYRIGHTX SCREEN_WIDTH*0.27
-#define COPYRIGHTY IMAGEY+385
+#define COPYRIGHTY IMAGEY*0.2
 
 
 
@@ -83,6 +83,31 @@ int startSakatu() {
 
 		SDL_GetMouseState(&x, &y);
 		if ((x > STARTX - 5) && (x < STARTX + 85) && (y > STARTY + 15) && (y < STARTY + 35)) sakatu = 1;
+
+		break;
+
+	default:
+		break;
+	}
+
+	return sakatu;
+}
+
+int clickaBarruanDago(int x1, int y1, int x2, int y2) {
+	//	| - - - y1 - -  |
+	//	| - - - - - - - |
+	//	x1 - - - - - - x2
+	//	| - - - - - - - |
+	//	| - - - y2 - - -|
+	int x, y, sakatu = 0;
+
+
+	switch (ebentuaJasoGertatuBada()) {
+
+	case SAGU_BOTOIA_EZKERRA:
+
+		SDL_GetMouseState(&x, &y);
+		if ((x > x1) && (x < x2) && (y > y1) && (y < y2)) sakatu = 1;
 
 		break;
 
