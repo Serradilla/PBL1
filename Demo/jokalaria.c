@@ -30,10 +30,15 @@
 #define ERASO9 ".\\img\\attack9.bmp"
 #define ERASO10 ".\\img\\attack10.bmp"
 
-
-#define ESKUBIKOBORDEA 601
+#define ESKUBIKOBORDEA 590
 #define EZKERREKOBORDEA 10
 #define PLATAFORMALUZERA 170
+
+#define TXURIZULOA 15
+#define ESKELETOZABALERA 20
+
+#define JOKALARIALUZERA 40
+#define JOKALARIARANGO 10
 
 int erasoarenKontadorea = 0;
 
@@ -94,7 +99,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 
 	case TECLA_SPACE:
 
-		if (jokalaria.dy == 0) {
+		if (jokalaria.posizioa.y == jokalaria.lurra) {
 			jokalaria.saltatzen = 1;
 			jokalaria.dy = -22;
 			playSound(saltoarenSoinua.Id);
@@ -156,7 +161,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 }
 
 ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto) {
-	if ((esqueleto.posizioa.x + 10 > jokalaria.posizioa.x) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10) && (esqueleto.posizioa.y - jokalaria.posizioa.y < 50) && (jokalaria.kont3 > 70)) {
+	if (((jokalaria.posizioa.x + JOKALARIALUZERA > esqueleto.posizioa.x - JOKALARIARANGO + TXURIZULOA) && (jokalaria.posizioa.x + JOKALARIALUZERA < esqueleto.posizioa.x + TXURIZULOA) && (jokalaria.posizioa.y == esqueleto.posizioa.y) && (jokalaria.kont3 > 300)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + JOKALARIARANGO + ESKELETOZABALERA) && (jokalaria.posizioa.x > esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + ESKELETOZABALERA) && (jokalaria.posizioa.y == esqueleto.posizioa.y) && (jokalaria.kont3 > 300))) {
 		jokalaria.bizitza--;
 		jokalaria.kont3 = 0;
 		playSound(mainCharDamage.Id);
@@ -167,7 +172,7 @@ ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto) {
 }
 
 ELEMENTUA jokalariaEtaBola(ELEMENTUA jokalaria, ELEMENTUA sua) {
-	if ((sua.posizioa.x <= jokalaria.posizioa.x + 30) && (sua.posizioa.x >= jokalaria.posizioa.x) && (sua.posizioa.y >= jokalaria.posizioa.y) && (sua.posizioa.y <= jokalaria.posizioa.y + 50) && (jokalaria.kont3 > 70)) {
+	if ((sua.posizioa.x <= jokalaria.posizioa.x + 30) && (sua.posizioa.x >= jokalaria.posizioa.x) && (sua.posizioa.y >= jokalaria.posizioa.y) && (sua.posizioa.y <= jokalaria.posizioa.y + 50) && (jokalaria.kont3 > 300)) {
 		jokalaria.bizitza--;
 		jokalaria.kont3 = 0;
 		playSound(mainCharDamage.Id);

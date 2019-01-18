@@ -252,7 +252,7 @@ void jolastu(void) {
 	esqueleto2.mugitzen = 1;
 
 	esqueleto3.Id = esqueletoSortu();
-	esqueleto3.posizioa.x = 600;
+	esqueleto3.posizioa.x = 700;
 	esqueleto3.posizioa.y = 350;
 	esqueleto3.dy = 0;
 	esqueleto3.dx = 0;
@@ -280,7 +280,7 @@ void jolastu(void) {
 	loadTheMusic(MUSIKA);
 	playMusic();
 
-	int ronda = 1;
+	ronda = 1;
 	char RondaKopuru[7];
 	char EnemigoKopuru[7];
 	EGOERA egoera;

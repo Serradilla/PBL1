@@ -21,6 +21,12 @@
 #define ENEMIGO5 ".\\img\\esqueleto5.bmp"
 #define ENEMIGO6 ".\\img\\esqueleto6.bmp"
 
+#define TXURIZULOA 15
+#define ESKELETOZABALERA 20
+
+#define JOKALARIALUZERA 40
+#define JOKALARIARANGO 30
+
 int eskeletoenAnimazioarenKontadorea = 0;
 int eskerreraAlaEskumaraJoangoDaEskeletoa = 1;
 
@@ -125,7 +131,7 @@ ELEMENTUA esqueletoFuntzioak3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (((jokalaria.posizioa.x + 10 < esqueleto.posizioa.x) && (jokalaria.posizioa.x + 10 > esqueleto.posizioa.x - 20) && (jokalaria.egoera == 6)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + 20) && (jokalaria.posizioa.x > esqueleto.posizioa.x) && (jokalaria.egoera == 7))) {
+	if (((jokalaria.posizioa.x + JOKALARIALUZERA > esqueleto.posizioa.x - JOKALARIARANGO + TXURIZULOA) && (jokalaria.posizioa.x + JOKALARIALUZERA < esqueleto.posizioa.x + TXURIZULOA ) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y == esqueleto.posizioa.y)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + JOKALARIARANGO + ESKELETOZABALERA) && (jokalaria.posizioa.x > esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + ESKELETOZABALERA) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y == esqueleto.posizioa.y))) {
 
 		enemigoKont--;
 		playSound(mainCharJotzenSoinua.Id);
@@ -149,7 +155,7 @@ ELEMENTUA esqueletoEtaJokalaria1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (((esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 7)) || ((esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 6))) {
+	if (((jokalaria.posizioa.x + JOKALARIALUZERA > esqueleto.posizioa.x - JOKALARIARANGO + TXURIZULOA) && (jokalaria.posizioa.x + JOKALARIALUZERA < esqueleto.posizioa.x + TXURIZULOA) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y == esqueleto.posizioa.y)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + JOKALARIARANGO + ESKELETOZABALERA) && (jokalaria.posizioa.x > esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + ESKELETOZABALERA) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y == esqueleto.posizioa.y))) {
 
 		enemigoKont--;
 		playSound(mainCharJotzenSoinua.Id);
@@ -173,7 +179,7 @@ ELEMENTUA esqueletoEtaJokalaria2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoEtaJokalaria3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if (((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x) && (esqueleto.posizioa.x > jokalaria.posizioa.x - 20) && (jokalaria.egoera == 7)) || ((jokalaria.posizioa.y == esqueleto.posizioa.y) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10 + 20) && (esqueleto.posizioa.x > jokalaria.posizioa.x + 10) && (jokalaria.egoera == 6))) {
+	if (((jokalaria.posizioa.x + JOKALARIALUZERA > esqueleto.posizioa.x - JOKALARIARANGO + TXURIZULOA) && (jokalaria.posizioa.x + JOKALARIALUZERA < esqueleto.posizioa.x + TXURIZULOA) && (jokalaria.egoera == 6) && (jokalaria.posizioa.y == esqueleto.posizioa.y)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + JOKALARIARANGO + ESKELETOZABALERA) && (jokalaria.posizioa.x > esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + ESKELETOZABALERA) && (jokalaria.egoera == 7) && (jokalaria.posizioa.y == esqueleto.posizioa.y))) {
 
 		enemigoKont--;
 		playSound(mainCharJotzenSoinua.Id);
