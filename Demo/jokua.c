@@ -37,9 +37,10 @@
 #define ATAKESOINUA ".\\sound\\MainCharSlash.wav"
 #define JOTZENSOINUA ".\\sound\\MainCharSlashHits.wav"
 #define SUABOTA ".\\sound\\DragonShoot.wav"
+#define DAMAGESOINUA ".\\sound\\MainCharGetsHit.wav"
+#define SALTO ".\\sound\\Jump.wav"
 
-
-ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, dragoiaSuaBota;
+ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, mainCharDamage, dragoiaSuaBota, saltoarenSoinua;
 
 void jokoaAurkeztu(void)
 {
@@ -78,6 +79,8 @@ void demohasi(void) {
 	mainCharAtakeSoinua.Id = loadSound(ATAKESOINUA);
 	mainCharJotzenSoinua.Id = loadSound(JOTZENSOINUA);
 	dragoiaSuaBota.Id = loadSound(SUABOTA);
+	mainCharDamage.Id = loadSound(DAMAGESOINUA);
+	saltoarenSoinua.Id = loadSound(SALTO);
 
 	musicUnload();
 	playSound(musikaMenu.Id);

@@ -3,7 +3,7 @@
 
 #include "definizioak.h"
 
-ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, dragoiaSuaBota;
+ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, mainCharDamage, dragoiaSuaBota, saltoarenSoinua;
 
 void jokoaAurkeztu(void);
 void sarreraMezuaIdatzi();
@@ -14,7 +14,6 @@ int eszenarioaSortu(void);
 int eszenarioa1Sortu(void);
 int enemigoSortu(void);
 int enemigo1Sortu(void);
-int plataformaSortu(void);
 int sua1Sortu(void);
 int sua2Sortu(void);
 int esqueletoSortu(void);

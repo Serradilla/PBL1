@@ -97,6 +97,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 		if (jokalaria.dy == 0) {
 			jokalaria.saltatzen = 1;
 			jokalaria.dy = -22;
+			playSound(saltoarenSoinua.Id);
 		}
 
 		break;
@@ -158,6 +159,7 @@ ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto) {
 	if ((esqueleto.posizioa.x + 10 > jokalaria.posizioa.x) && (esqueleto.posizioa.x < jokalaria.posizioa.x + 10) && (esqueleto.posizioa.y - jokalaria.posizioa.y < 50) && (jokalaria.kont3 > 70)) {
 		jokalaria.bizitza--;
 		jokalaria.kont3 = 0;
+		playSound(mainCharDamage.Id);
 	}
 	jokalaria.kont3++;
 
@@ -168,6 +170,7 @@ ELEMENTUA jokalariaEtaBola(ELEMENTUA jokalaria, ELEMENTUA sua) {
 	if ((sua.posizioa.x <= jokalaria.posizioa.x + 30) && (sua.posizioa.x >= jokalaria.posizioa.x) && (sua.posizioa.y >= jokalaria.posizioa.y) && (sua.posizioa.y <= jokalaria.posizioa.y + 50) && (jokalaria.kont3 > 70)) {
 		jokalaria.bizitza--;
 		jokalaria.kont3 = 0;
+		playSound(mainCharDamage.Id);
 	}
 	jokalaria.kont3++;
 
