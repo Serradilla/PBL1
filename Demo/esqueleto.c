@@ -26,16 +26,29 @@ int eskerreraAlaEskumaraJoangoDaEskeletoa = 1;
 
 
 ELEMENTUA esqueletoFuntzioak1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
-		esqueleto.dx = 1;
+
+	if (jokalaria.posizioa.y < 349) {
+		esqueleto.dx = 0;
+	}
+	else if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		if (esqueleto.dx < 6) {
+			esqueleto.dx = 1 + ronda * 0.5;
+		}
+		else {
+			esqueleto.dx = 6;
+		}
 	}
 	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
-		esqueleto.dx = -1;
+		if (esqueleto.dx > -6) {
+			esqueleto.dx = -1 - ronda * 0.5;
+		}
+		else {
+			esqueleto.dx = -6;
+		}
 	}
 	else {
 		esqueleto.dx = 0;
 	}
-
 
 	eskerreraAlaEskumaraJoangoDaEskeletoa = ezkerreraAlaEskumaraEskeletoa(jokalaria.posizioa, esqueleto.posizioa);
 	esqueleto = eskeletoarenAnimazioa(esqueleto);
@@ -46,11 +59,24 @@ ELEMENTUA esqueletoFuntzioak1(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoFuntzioak2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
-		esqueleto.dx = 1;
+	if (jokalaria.posizioa.y < 349) {
+		esqueleto.dx = 0;
+	}
+	else if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		if (esqueleto.dx < 6) {
+			esqueleto.dx = 1 + ronda * 0.5;
+		}
+		else {
+			esqueleto.dx = 6;
+		}
 	}
 	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
-		esqueleto.dx = -1;
+		if (esqueleto.dx > -6) {
+			esqueleto.dx = -1 - ronda * 0.5;
+		}
+		else {
+			esqueleto.dx = -6;
+		}
 	}
 	else {
 		esqueleto.dx = 0;
@@ -66,11 +92,24 @@ ELEMENTUA esqueletoFuntzioak2(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
 }
 
 ELEMENTUA esqueletoFuntzioak3(ELEMENTUA esqueleto, ELEMENTUA jokalaria) {
-	if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
-		esqueleto.dx = 1;
+	if (jokalaria.posizioa.y < 349) {
+		esqueleto.dx = 0;
+	}
+	else if ((esqueleto.posizioa.x < jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
+		if (esqueleto.dx < 6) {
+			esqueleto.dx = 1 + ronda * 0.5;
+		}
+		else {
+			esqueleto.dx = 6;
+		}
 	}
 	else if ((esqueleto.posizioa.x > jokalaria.posizioa.x) && (enemigoKont >= 0) && (esqueleto.mugitzen == 1)) {
-		esqueleto.dx = -1;
+		if (esqueleto.dx > -6) {
+			esqueleto.dx = -1 - ronda * 0.5;
+		}
+		else {
+			esqueleto.dx = -6;
+		}
 	}
 	else {
 		esqueleto.dx = 0;

@@ -23,5 +23,6 @@ int bizitzaSortu(void);
 void demohasi(void);
 
 int enemigoKont;
+int ronda;
 
 #endif
