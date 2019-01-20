@@ -1,6 +1,6 @@
 #ifndef DEATHMENU
 #define DEATHMENU
 
-void deathScreen();
+int deathScreen();
 
 #endif // !DEATHMENU

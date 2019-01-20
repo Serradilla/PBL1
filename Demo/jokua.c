@@ -40,25 +40,46 @@
 #define DAMAGESOINUA ".\\sound\\MainCharGetsHit.wav"
 #define SALTO ".\\sound\\Jump.wav"
 
+#define STARTX SCREEN_WIDTH*0.43
+#define STARTY (SCREEN_HEIGHT / 8)+175
+#define SETTINGSX SCREEN_WIDTH*0.44
+#define SETTINGSY (SCREEN_HEIGHT / 8)+225
+
 ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, mainCharDamage, dragoiaSuaBota, saltoarenSoinua;
 
-void jokoaAurkeztu(void)
+int jokoaAurkeztu(void)
 {
-	int sakatu = 0;
+	int sakatu = 0, sakatu1 = 0, ret = 0;
+	ELEMENTUA logo;
 
 	audioInit();
 	loadTheMusic(MUSIKAMENU);
 	playMusic();
 	
-	animation();
+	logo.Id = animation();
 
-	do
-	{
-		sakatu = startSakatu();
-	} while (sakatu == 0);
+	//do
+	//{
+	//	sakatu = clickaBarruanDago(STARTX - 5, STARTY + 15, STARTX + 85, STARTY + 35);
+	//	sakatu = clickaBarruanDago(SETTINGSX, SETTINGSY, SETTINGSX + 67, SETTINGSY + 22);
+	//} while (sakatu == 0);
 
+	while ((sakatu == 0) && (sakatu1 == 0)) {
+		if (sakatu = clickaBarruanDago(STARTX - 5, STARTY + 15, STARTX + 85, STARTY + 35)) {//start button
+			sakatu = 1;
+
+		}
+		if (sakatu1 = clickaBarruanDago(SETTINGSX, SETTINGSY, SETTINGSX + 67, SETTINGSY + 22)) {//menu button
+			sakatu = 1;
+			ret = 1;
+		}
+	}
+
+	irudiaKendu(logo.Id);
 	pantailaGarbitu();
 	pantailaBerriztu();
+
+	return ret;
 }
 
 void sarreraMezuaIdatzi()
@@ -181,14 +202,16 @@ void demohasi(void) {
 
 		Sleep(25);
 
+
 		pantailaGarbitu();
 		irudiakMarraztu();
 		pantailaBerriztu();
 
 	} while (eszenarioa.posizioa.x > -(1608 - 640));
-
-	irudiaKendu(jokalaria.Id);
+	
 	pantailaGarbitu();
+	irudiaKendu(jokalaria.Id);
+	irudiaKendu(eszenarioa.Id);
 }
 
 void jolastu(void) {
@@ -334,18 +357,29 @@ void jolastu(void) {
 		pantailaGarbitu();
 		irudiakMarraztu();
 
-		textuaIdatzi(430, 50, "Enemigo:");
+		textuaIdatzi(430, 50, "Enemies:");
 		textuaIdatzi(560, 50, EnemigoKopuru);
-		textuaIdatzi(50, 50, "Ronda:");
+		textuaIdatzi(50, 50, "Round ");
 		textuaIdatzi(150, 50, RondaKopuru);
 
 		pantailaBerriztu();
 
 		Sleep(25);
 
-		//if (jokalaria.bizitza == 0) {
-		//	egoera = GALDU;
-		//}
+		if (jokalaria.bizitza == 0) {
+			egoera = GALDU;
+			irudiaKendu(eszenarioa.Id);
+			irudiaKendu(eszenarioa1Sortu());
+			irudiaKendu(jokalaria.Id);
+			irudiaKendu(esqueleto1.Id);
+			irudiaKendu(esqueleto2.Id);
+			irudiaKendu(esqueleto3.Id);
+			irudiaKendu(sua1.Id);
+			irudiaKendu(sua2.Id);
+			irudiaKendu(enemigo.Id);
+			irudiaKendu(enemigo1.Id);
+			irudiaKendu(bizitza.Id);
+		}
 
 	} while (egoera == JOLASTEN);
 

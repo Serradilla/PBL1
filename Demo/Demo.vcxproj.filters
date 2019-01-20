@@ -45,11 +45,26 @@
     <ClCompile Include="jokalaria.c">
       <Filter>Archivos de recursos</Filter>
     </ClCompile>
-    <ClCompile Include="enemigo.c">
-      <Filter>Archivos de recursos</Filter>
-    </ClCompile>
     <ClCompile Include="plataformak.c">
       <Filter>Archivos de recursos</Filter>
+    </ClCompile>
+    <ClCompile Include="bizitza.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="death.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="dragoiak.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="esqueleto.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.c">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="sua.c">
+      <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,10 +92,25 @@
     <ClInclude Include="jokalaria.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="enemigo.h">
+    <ClInclude Include="plataformak.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="plataformak.h">
+    <ClInclude Include="bizitza.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="death.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="dragoiak.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="esqueleto.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="sua.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

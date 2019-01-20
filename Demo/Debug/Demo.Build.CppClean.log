@@ -1,36 +1,26 @@
-c:\users\iker\desktop\prueba\demo\debug\vc141.pdb
-c:\users\iker\desktop\prueba\demo\debug\vc141.idb
-c:\users\iker\desktop\prueba\demo\debug\plataformak.obj
-c:\users\iker\desktop\prueba\demo\debug\main.obj
-c:\users\iker\desktop\prueba\demo\debug\jokua.obj
-c:\users\iker\desktop\prueba\demo\debug\jokalaria.obj
-c:\users\iker\desktop\prueba\demo\debug\enemigo.obj
-c:\users\iker\desktop\prueba\demo\debug\text.obj
-c:\users\iker\desktop\prueba\demo\debug\soinua.obj
-c:\users\iker\desktop\prueba\demo\debug\imagen.obj
-c:\users\iker\desktop\prueba\demo\debug\graphics.obj
-c:\users\iker\desktop\prueba\demo\debug\ebentoak.obj
-c:\users\iker\desktop\prueba\debug\demo.ilk
-c:\users\iker\desktop\prueba\debug\demo.exe
-c:\users\iker\desktop\prueba\debug\demo.pdb
-d:\visual studio\program\pbl\pbl1\demo\debug\ebentoak.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\enemigo.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\graphics.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\imagen.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\jokalaria.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\jokua.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\main.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\plataformak.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\soinua.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\text.obj
-d:\visual studio\program\pbl\pbl1\demo\debug\vc141.idb
-d:\visual studio\program\pbl\pbl1\demo\debug\vc141.pdb
-d:\visual studio\program\pbl\pbl1\debug\demo.pdb
-d:\visual studio\program\pbl\pbl1\debug\demo.exe
-d:\visual studio\program\pbl\pbl1\debug\demo.ilk
-d:\visual studio\program\pbl\pbl1\demo\debug\demo.tlog\cl.command.1.tlog
-d:\visual studio\program\pbl\pbl1\demo\debug\demo.tlog\cl.read.1.tlog
-d:\visual studio\program\pbl\pbl1\demo\debug\demo.tlog\cl.write.1.tlog
-d:\visual studio\program\pbl\pbl1\demo\debug\demo.tlog\link.command.1.tlog
-d:\visual studio\program\pbl\pbl1\demo\debug\demo.tlog\link.read.1.tlog
-d:\visual studio\program\pbl\pbl1\demo\debug\demo.tlog\link.write.1.tlog
+c:\development\pbl-1\pbl1\demo\debug\vc141.pdb
+c:\development\pbl-1\pbl1\demo\debug\vc141.idb
+c:\development\pbl-1\pbl1\demo\debug\sua.obj
+c:\development\pbl-1\pbl1\demo\debug\plataformak.obj
+c:\development\pbl-1\pbl1\demo\debug\menu.obj
+c:\development\pbl-1\pbl1\demo\debug\main.obj
+c:\development\pbl-1\pbl1\demo\debug\jokua.obj
+c:\development\pbl-1\pbl1\demo\debug\jokalaria.obj
+c:\development\pbl-1\pbl1\demo\debug\esqueleto.obj
+c:\development\pbl-1\pbl1\demo\debug\dragoiak.obj
+c:\development\pbl-1\pbl1\demo\debug\death.obj
+c:\development\pbl-1\pbl1\demo\debug\bizitza.obj
+c:\development\pbl-1\pbl1\demo\debug\text.obj
+c:\development\pbl-1\pbl1\demo\debug\soinua.obj
+c:\development\pbl-1\pbl1\demo\debug\imagen.obj
+c:\development\pbl-1\pbl1\demo\debug\graphics.obj
+c:\development\pbl-1\pbl1\demo\debug\ebentoak.obj
+c:\development\pbl-1\pbl1\debug\demo.exe
+c:\development\pbl-1\pbl1\debug\demo.ilk
+c:\development\pbl-1\pbl1\debug\demo.pdb
+c:\development\pbl-1\pbl1\demo\debug\demo.tlog\cl.command.1.tlog
+c:\development\pbl-1\pbl1\demo\debug\demo.tlog\cl.read.1.tlog
+c:\development\pbl-1\pbl1\demo\debug\demo.tlog\cl.write.1.tlog
+c:\development\pbl-1\pbl1\demo\debug\demo.tlog\link.command.1.tlog
+c:\development\pbl-1\pbl1\demo\debug\demo.tlog\link.read.1.tlog
+c:\development\pbl-1\pbl1\demo\debug\demo.tlog\link.write.1.tlog

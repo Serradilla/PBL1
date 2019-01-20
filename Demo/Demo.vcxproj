@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Visual Studio\Program\PBL\PBL1\simpleSdlWrapper;D:\Visual Studio\Program\PBL\PBL1\sdl2ttf\include;D:\Visual Studio\Program\PBL\PBL1\sdl2mixer\include;D:\Visual Studio\Program\PBL\PBL1\sdl2image\include;D:\Visual Studio\Program\PBL\PBL1\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\PBL-1\PBL1\sdl2ttf\include;C:\Development\PBL-1\PBL1\sdl2mixer\include;C:\Development\PBL-1\PBL1\sdl2image\include;C:\Development\PBL-1\PBL1\sdl2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2image\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2ttf\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2mixer\libs;C:\Users\Iker\Desktop\Prueba_pbl\Demo\sdl2\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -132,11 +132,16 @@
     <ClCompile Include="..\simpleSdlWrapper\imagen.c" />
     <ClCompile Include="..\simpleSdlWrapper\soinua.c" />
     <ClCompile Include="..\simpleSdlWrapper\text.c" />
-    <ClCompile Include="enemigo.c" />
+    <ClCompile Include="bizitza.c" />
+    <ClCompile Include="death.c" />
+    <ClCompile Include="dragoiak.c" />
+    <ClCompile Include="esqueleto.c" />
     <ClCompile Include="jokalaria.c" />
     <ClCompile Include="jokua.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="menu.c" />
     <ClCompile Include="plataformak.c" />
+    <ClCompile Include="sua.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\simpleSdlWrapper\ebentoak.h" />
@@ -144,11 +149,16 @@
     <ClInclude Include="..\simpleSdlWrapper\imagen.h" />
     <ClInclude Include="..\simpleSdlWrapper\soinua.h" />
     <ClInclude Include="..\simpleSdlWrapper\text.h" />
+    <ClInclude Include="bizitza.h" />
+    <ClInclude Include="death.h" />
     <ClInclude Include="definizioak.h" />
-    <ClInclude Include="enemigo.h" />
+    <ClInclude Include="dragoiak.h" />
+    <ClInclude Include="esqueleto.h" />
     <ClInclude Include="jokalaria.h" />
     <ClInclude Include="jokua.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="plataformak.h" />
+    <ClInclude Include="sua.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

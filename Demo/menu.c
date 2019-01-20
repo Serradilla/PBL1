@@ -14,38 +14,38 @@
 #include "definizioak.h"
 //-----------------------------------------------------------------------
 #define START "START"
-#define SETTINGS "SETTINGS"
+#define SETTINGS "EXIT"
 #define LOGO ".\\img\\logo.bmp"
 #define COPYRIGHT "2019 - Woodwind TM"
 #define IMAGEX SCREEN_WIDTH*0.25
 #define IMAGEY (SCREEN_HEIGHT / 8)
 #define STARTX SCREEN_WIDTH*0.43
 #define STARTY IMAGEY+175
-#define SETTINGSX SCREEN_WIDTH*0.40
+#define SETTINGSX SCREEN_WIDTH*0.44
 #define SETTINGSY IMAGEY+225
 #define COPYRIGHTX SCREEN_WIDTH*0.27
 #define COPYRIGHTY IMAGEY*0.2
 
 
 
-void animation() {
+int animation() {
 	int tope = (SCREEN_HEIGHT / 8);
 	int anim = IMAGEY + SCREEN_HEIGHT;
-	int logoid;
+	ELEMENTUA logo;
 
-	logoid = menuImages(anim);
+	logo.Id = menuImages(anim);
 
 	do
 	{
 		pantailaGarbitu();
 		anim -= 1;
-		irudiaMugitu(logoid, IMAGEX, anim);
+		irudiaMugitu(logo.Id, IMAGEX, anim);
 		menuText(anim);
-		arkatzKoloreaEzarri(255, 255, 255);
-		puntuaMarraztu(STARTX, STARTY+35);
 		irudiakMarraztu();
 		pantailaBerriztu();
 	} while (anim != tope);
+
+	return logo.Id;
 }
 
 void menuText(int anim) {
@@ -70,27 +70,6 @@ int menuImages(int anim) {
 	pantailaBerriztu();
 
 	return Id;
-}
-
-int startSakatu() {
-
-	int x, y, sakatu = 0;
-
-
-	switch (ebentuaJasoGertatuBada()) {
-
-	case SAGU_BOTOIA_EZKERRA:
-
-		SDL_GetMouseState(&x, &y);
-		if ((x > STARTX - 5) && (x < STARTX + 85) && (y > STARTY + 15) && (y < STARTY + 35)) sakatu = 1;
-
-		break;
-
-	default:
-		break;
-	}
-
-	return sakatu;
 }
 
 int clickaBarruanDago(int x1, int y1, int x2, int y2) {

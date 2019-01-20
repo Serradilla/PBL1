@@ -13,33 +13,30 @@
 #include "death.h"
 
 int main(int argc, char * str[]) {
-	int jarraitu = 0, sakatu;
+	int jarraitu = 0, sakatu, atera = 0, menu = 0;
 
 	if (sgHasieratu() == -1)
 	{
 		fprintf(stderr, "Unable to set 640x480 video: %s\n", SDL_GetError());
 		return 1;
 	}
+
 	textuaGaitu();
 
-	jokoaAurkeztu();
+	while (menu == 0) {
+		menu = jokoaAurkeztu();
+		if (menu == 1) {
+			atera = 1;
+		}
+		else(atera = 0);
+		while (atera == 0) {
+			demohasi();
+			jolastu();
+			atera = deathScreen();
+			if (atera == 2) menu = 1;
+		}
+	}
 
-	demohasi();
-
-	jolastu();
-
-	deathScreen();
-
-	do
-	{
-		sakatu = startSakatu();
-	} while (sakatu == 0);
-
-	do
-	{
-		jarraitu = ebentuaJasoGertatuBada();
-	} while (jarraitu != TECLA_RETURN);
 	sgItxi();
 	return 0;
 }
-

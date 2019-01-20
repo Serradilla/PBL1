@@ -5,7 +5,7 @@
 
 ELEMENTUA musikaMenu, mainCharAtakeSoinua, mainCharJotzenSoinua, mainCharDamage, dragoiaSuaBota, saltoarenSoinua;
 
-void jokoaAurkeztu(void);
+int jokoaAurkeztu(void);
 void sarreraMezuaIdatzi();
 void instrukzioakIdatzi();
 void jolastu(void);
