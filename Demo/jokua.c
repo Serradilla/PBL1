@@ -177,10 +177,10 @@ void demohasi(void) {
 	jokalaria.dx = 0;
 	jokalaria.dy = 0;
 	jokalaria.saltatzen = 0;
-	jokalaria.kont = 0;
+	jokalaria.kontmugimendua = 0;
 	jokalaria.lurra = 350;
-	jokalaria.kont2 = 0;
-	jokalaria.kont3 = 0;
+	jokalaria.kontanim = 0;
+	jokalaria.kontbizitza = 0;
 	jokalaria.bizitza = 6;
 
 	do {
@@ -293,10 +293,10 @@ void jolastu(void) {
 	jokalaria.dx = 0;
 	jokalaria.dy = 0;
 	jokalaria.saltatzen = 0;
-	jokalaria.kont = 0;
+	jokalaria.kontmugimendua = 0;
 	jokalaria.lurra = 350;
-	jokalaria.kont2 = 0;
-	jokalaria.kont3 = 0;
+	jokalaria.kontanim = 0;
+	jokalaria.kontbizitza = 0;
 	jokalaria.bizitza = 6;
 
 	audioInit();
@@ -359,7 +359,7 @@ void jolastu(void) {
 
 		textuaIdatzi(430, 50, "Enemies:");
 		textuaIdatzi(560, 50, EnemigoKopuru);
-		textuaIdatzi(50, 50, "Round ");
+		textuaIdatzi(50, 50, "Round: ");
 		textuaIdatzi(150, 50, RondaKopuru);
 
 		pantailaBerriztu();

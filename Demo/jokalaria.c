@@ -73,7 +73,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 			jokalaria.dx = 0;
 		}
 
-		jokalaria.kont = 0;
+		jokalaria.kontmugimendua = 0;
 
 		jokalaria.ebentua = TECLA_RIGHT;
 
@@ -90,7 +90,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 			jokalaria.dx = 0;
 		}
 
-		jokalaria.kont = 0;
+		jokalaria.kontmugimendua = 0;
 
 		jokalaria.ebentua = TECLA_LEFT;
 
@@ -110,22 +110,22 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 	case TECLA_d:
 
 		jokalaria.egoera = 6;
-		jokalaria.kont4 = 0;
+		jokalaria.konteraso = 0;
 		
 		break;
 
 	case TECLA_a:
 
 		jokalaria.egoera = 7;
-		jokalaria.kont4 = 0;
+		jokalaria.konteraso = 0;
 
 		break;
 
 	default:
 
-		if (jokalaria.kont > 14) {
+		if (jokalaria.kontmugimendua > 14) {
 
-			jokalaria.kont2 = 0;
+			jokalaria.kontanim = 0;
 
 			if (jokalaria.dx > 0)
 			{
@@ -139,7 +139,7 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 				jokalaria.ebentua = 0;
 			}
 		}
-		jokalaria.kont++;
+		jokalaria.kontmugimendua++;
 
 		break;
 	}
@@ -161,23 +161,23 @@ ELEMENTUA jokalariaFuntzioak(ELEMENTUA jokalaria, ELEMENTUA eszenarioa, ELEMENTU
 }
 
 ELEMENTUA jokalariaEtaEsqueleto(ELEMENTUA jokalaria, ELEMENTUA esqueleto) {
-	if (((jokalaria.posizioa.x + JOKALARIALUZERA > esqueleto.posizioa.x - JOKALARIARANGO + TXURIZULOA) && (jokalaria.posizioa.x + JOKALARIALUZERA < esqueleto.posizioa.x + TXURIZULOA) && (jokalaria.posizioa.y == esqueleto.posizioa.y) && (jokalaria.kont3 > 300)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + JOKALARIARANGO + ESKELETOZABALERA) && (jokalaria.posizioa.x > esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + ESKELETOZABALERA) && (jokalaria.posizioa.y == esqueleto.posizioa.y) && (jokalaria.kont3 > 300))) {
+	if (((jokalaria.posizioa.x + JOKALARIALUZERA > esqueleto.posizioa.x - JOKALARIARANGO + TXURIZULOA) && (jokalaria.posizioa.x + JOKALARIALUZERA < esqueleto.posizioa.x + TXURIZULOA) && (jokalaria.posizioa.y == esqueleto.posizioa.y) && (jokalaria.kontbizitza > 300)) || ((jokalaria.posizioa.x < esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + JOKALARIARANGO + ESKELETOZABALERA) && (jokalaria.posizioa.x > esqueleto.posizioa.x + TXURIZULOA + TXURIZULOA + ESKELETOZABALERA) && (jokalaria.posizioa.y == esqueleto.posizioa.y) && (jokalaria.kontbizitza > 300))) {
 		jokalaria.bizitza--;
-		jokalaria.kont3 = 0;
+		jokalaria.kontbizitza = 0;
 		playSound(mainCharDamage.Id);
 	}
-	jokalaria.kont3++;
+	jokalaria.kontbizitza++;
 
 	return jokalaria;
 }
 
 ELEMENTUA jokalariaEtaBola(ELEMENTUA jokalaria, ELEMENTUA sua) {
-	if ((sua.posizioa.x <= jokalaria.posizioa.x + 30) && (sua.posizioa.x >= jokalaria.posizioa.x) && (sua.posizioa.y >= jokalaria.posizioa.y) && (sua.posizioa.y <= jokalaria.posizioa.y + 50) && (jokalaria.kont3 > 300)) {
+	if ((sua.posizioa.x <= jokalaria.posizioa.x + 30) && (sua.posizioa.x >= jokalaria.posizioa.x) && (sua.posizioa.y >= jokalaria.posizioa.y) && (sua.posizioa.y <= jokalaria.posizioa.y + 50) && (jokalaria.kontbizitza > 300)) {
 		jokalaria.bizitza--;
-		jokalaria.kont3 = 0;
+		jokalaria.kontbizitza = 0;
 		playSound(mainCharDamage.Id);
 	}
-	jokalaria.kont3++;
+	jokalaria.kontbizitza++;
 
 	return jokalaria;
 }
@@ -292,13 +292,13 @@ ELEMENTUA animatu(ELEMENTUA jokalaria) {
 
 ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
-	if ((jokalaria.egoera == 7) && (jokalaria.kont4 < 15)) {
+	if ((jokalaria.egoera == 7) && (jokalaria.konteraso < 15)) {
 		jokalaria.egoera = 7;
-		jokalaria.kont4++;
+		jokalaria.konteraso++;
 	}
-	else if ((jokalaria.egoera == 6) && (jokalaria.kont4 < 15)) {
+	else if ((jokalaria.egoera == 6) && (jokalaria.konteraso < 15)) {
 		jokalaria.egoera = 6;
-		jokalaria.kont4++;
+		jokalaria.konteraso++;
 	}
 	else {
 
@@ -316,25 +316,25 @@ ELEMENTUA animazioa(ELEMENTUA jokalaria, ELEMENTUA eszenarioa) {
 
 			if ((jokalaria.dx > 0) || (eszenarioa.dx < 0)) {
 				jokalaria.egoera = 1;
-				jokalaria.kont2++;
+				jokalaria.kontanim++;
 
-				if (jokalaria.kont2 > 5) {
+				if (jokalaria.kontanim > 5) {
 					jokalaria.egoera = 0;
 
-					if (jokalaria.kont2 > 10) {
-						jokalaria.kont2 = 0;
+					if (jokalaria.kontanim > 10) {
+						jokalaria.kontanim = 0;
 					}
 				}
 			}
 			else if ((jokalaria.dx < 0) || (eszenarioa.dx > 0)) {
 				jokalaria.egoera = 2;
-				jokalaria.kont2++;
+				jokalaria.kontanim++;
 
-				if (jokalaria.kont2 > 5) {
+				if (jokalaria.kontanim > 5) {
 					jokalaria.egoera = 3;
 
-					if (jokalaria.kont2 > 10) {
-						jokalaria.kont2 = 0;
+					if (jokalaria.kontanim > 10) {
+						jokalaria.kontanim = 0;
 					}
 				}
 			}
